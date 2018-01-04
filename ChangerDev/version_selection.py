@@ -1,9 +1,9 @@
 import os
 
-wrong_answer = 'Некорректный ответ, попробуйте снова'
 
+def version_selection(x):
 
-def version_selection():
+    os.system('cls')
 
     print('''
 Перед использованием программы следует убедиться, что требуемый билд находится в локальном репозитории.
@@ -18,18 +18,17 @@ def version_selection():
     
 Введите ваш ответ:''')
 
-    get_version = input("")
+    get_version = input('')
 
     if get_version in ('1', '2'):
         version_choice = int(get_version) + 1
-        print(str('9.' + str(version_choice)))
+        return '9.' + str(version_choice)
 
     elif get_version in ('RF', 'rf'):
         print(os.startfile('D:\Git'))
         os.system('cls')
-        return True
 
     else:
-        print(wrong_answer)
+        print('Weong')
         os.system('pause')
         os.system('cls')
