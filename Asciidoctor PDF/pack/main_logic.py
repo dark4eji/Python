@@ -84,8 +84,26 @@ class Mlogic:
         self.entry4.insert(END, self.outfolder)
 
     def publishing(self):
-        self.outtext = "asciidoctor-pdf " + '"{}{}{}"'.format(self.fontfolder, self.temppath, self.projpath)
-        os.system(self.outtext)
+        self.projectplace = None
+        self.template = None
+        self.fonts = None
+        
+        if self.temppath not in "":                      
+            self.template = " -a pdf-style=" + "\"" + self.temppath + "\"" + " "
+        else:            
+            self.template = ""
+        
+        if self.fontfolder not in "":         
+            self.fonts = " -a pdf-fontsdir=" + "\"" + self.fontfolder + "\"" + " "
+        else:
+            self.fonts = ""
+        
+        self.projectplace = "\"" + self.projpath + "\""
+        self.outputplace = " -D " + "\"" + self.outfolder + "\""
+        
+        self.outtext = "asciidoctor-pdf " + '{}{}{}{}'.format(self.outputplace, self.fonts, self.template, self.projectplace)
+        print(self.outtext)
+        os.system(self.outtext)      
 
         # if self.var1 == 1:
         #     if
