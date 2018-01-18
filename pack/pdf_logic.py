@@ -100,6 +100,12 @@ class Pdflogic:
         self.entry4.delete(0, END)
         self.outfolder = str(askdirectory())
         self.entry4.insert(END, self.outfolder)
+        if self.entry4.get() in "D:/" or self.entry4.get() in "C:/":
+            messagebox.showwarning("Wrong path", "Output folder should not be a root")
+            self.entry4.delete(0, END)
+            return
+        else:
+            pass
 
     def get_pub_vars(self):
 
@@ -118,34 +124,32 @@ class Pdflogic:
             self.fonts = ""
 
         self.projectplace = " \"" + self.projpath + "\""
-        self.outputplace = " -D " + " \"" + self.outfolder + "\""
-        print(self.outputplace)
+        self.outputplace = " -D " + os.path.normpath(self.outfolder)
 
     def postpub(self):
 
         self.pubbed_file = os.path.basename(self.projpath).replace(".adoc", ".pdf")
-        print(self.pubbed_file)
 
         if self.var2.get():
             self.logcheck = subprocess.check_output(self.outtext, stderr=subprocess.STDOUT, shell=True).decode('UTF-8')
             if self.logcheck in '':
                 pass
             elif self.logcheck not in '':
-                with open(os.path.abspath(self.outfolder) + '/Log.txt', 'w') as log:
+                with open((os.path.join(os.path.abspath(self.outfolder), 'Log.txt')), 'w') as log:
                     log.write(self.logcheck)
                 self.result = messagebox.askyesno("Issues", "Issues occurred while publishing. Show log file?")
                 if self.result:
-                    os.system("explorer.exe " + (os.path.abspath(self.outfolder) + '\Log.txt').replace("\\\\", "\\"))
+                    os.system("explorer.exe " + os.path.join(os.path.abspath(self.outfolder), 'Log.txt'))
 
         self.openpdf()
 
     def openpdf(self):
+        self.openfile = os.path.join(self.outfolder, self.pubbed_file)
 
-        self.openfile = (self.outfolder + "/" + self.pubbed_file).replace("//", "/")
-        print(os.path.normpath(self.openfile))
-		
+        print(self.openfile)
+
         if self.var1.get():
-            os.system('\"' + self.openfile + '\"')
+            subprocess.call("" + self.openfile + "", shell=True)
 
     def pubcheck(self):
 
@@ -169,10 +173,8 @@ class Pdflogic:
     def publishing(self):
 
         self.get_pub_vars()
-        
-        self.outtext = "asciidoctor-pdf " + '{}{}{}{}'.format(self.outputplace, self.fonts, self.template, self.projectplace)
-
-        os.system(self.outtext)
+        self.outtext = "asciidoctor-pdf " + self.outputplace + self.fonts + self.template + self.projectplace
+        subprocess.call(self.outtext, shell=True)
 
         self.postpub()
 
