@@ -1,1 +1,1 @@
-__all__ = ['radbutton', 'label', 'optionlist', 'panedwindow', 'lblw', 'pdf_logic']
+__all__ = ['radbutton', 'label', 'optionlist', 'panedwindow', 'lblw', 'pdf_logic', 'editor']

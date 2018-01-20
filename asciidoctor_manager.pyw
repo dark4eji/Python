@@ -6,6 +6,7 @@ import fileinput
 import os
 from pack import *
 from pack import pdf_logic as ml
+from pack import opermenu as fm
 
 projpath = None
 topicname = None
@@ -146,16 +147,14 @@ def creating(event):
         else:
             messagebox.showerror("Error", "Creating is unsuccessful")
 
-
 root = Tk()
 
 
 nb = ttk.Notebook(root, height=350)
 
-fr1 = ttk.Frame(width=768, height=576)
+
 fr2 = ttk.Frame(width=768, height=576)
 
-nb.add(fr1, text="Publishing")
 nb.add(fr2, text="Creating")
 
 p = PanedWindow(fr2, orient=VERTICAL)
@@ -167,11 +166,7 @@ p.add(gpw1)
 p.add(gpw2)
 
 
-# fm1 = Menu(root, tearoff=0)
-# fm1.add.command(label="File", command=)
-# filemenu = Menu(menubar, tearoff=0)
-# filemenu.add_command(label="Open", command=hello)
-# filemenu.add_command(label="Save", command=hello)
+#
 btn1 = Button(fr2,
               text="...",
               width=3,
@@ -226,6 +221,8 @@ entry5 = Entry(gpw2,
                width=40,
                bd=3)
 
+
+
 #ENTRY PLACING
 
 entry1.grid(column=2, pady=10, row=1)
@@ -257,13 +254,16 @@ radbutton.Radbuttons(gpw1)  # Radio buttons code
 
 optionlist.Optionlist(gpw1)  # Option list code
 
-ml.Pdflogic(fr1)
+a = ml.Pdflogic
+b = fm.Opmenu
+
+b(root, a)
 
 p.place(x=10, y=100)
 
 nb.grid(row=1, column=1)
 
-root.title('Asciidoctor handle')
+root.title('Asciidoctor Manager')
 root.geometry('550x426')
 root.resizable(width=False, height=False)
 
