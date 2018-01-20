@@ -4,7 +4,7 @@ import os
 import subprocess
 
 
-class Pdflogic:
+class Publisher:
     def __init__(self, parent):
 
         self.temppath = None
@@ -175,43 +175,7 @@ class Pdflogic:
         self.get_pub_vars()
         self.outtext = "asciidoctor-pdf " + self.outputplace + self.fonts + self.template + self.projectplace
         subprocess.call(self.outtext, shell=True)
-
         self.postpub()
-
-
-        # if self.var1 == 1:
-        #     if
-        #     while True:
-        #         try:
-        #             os.system("explorer.exe " + self.projpath.replace(".adoc", ".pdf"))
-        #         except BaseException:
-        #             print('CAnt')
-        #
-    # def interruption(self):
-    #
-    #     if os.path.exists(os.path.normpath(self.projpath)):
-    #         pass
-    #     else:
-    #         messagebox.showwarning("No path", "Path does not exist. Try again")
-    #         return
-    #
-    #     if os.path.exists(os.path.normpath(self.temppath)):
-    #         pass
-    #     else:
-    #         messagebox.showwarning("No path", "Path does not exist. Try again")
-    #         return
-    #
-    #     if os.path.exists(os.path.normpath(self.outfolder)):
-    #         pass
-    #     else:
-    #         messagebox.showwarning("No path", "Path does not exist. Try again")
-    #         return
-    #
-    #     if os.path.exists(os.path.normpath(self.fontfolder)):
-    #         pass
-    #     else:
-    #         messagebox.showwarning("No path", "Path does not exist. Try again")
-    #         return
 
     def elements_placing(self):
 
