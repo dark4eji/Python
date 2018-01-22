@@ -2,11 +2,12 @@ from tkinter.filedialog import *
 from tkinter import messagebox
 import os
 import subprocess
-
+from pack.noproj_notifier import noproj_notifier
 
 class Publisher:
-    def __init__(self, parent):
+    def __init__(self, parent, path):
 
+        self.path = path
         self.temppath = None
         self.fontfolder = None
 
@@ -19,12 +20,6 @@ class Publisher:
         self.chbtn2 = Checkbutton(parent,
                                  text="Create log file",
                                  variable=self.var2)
-
-        self.btn1 = Button(parent,
-                           text="...",
-                           width=3,
-                           height=1,
-                           command=self.get_projpath)
 
         self.btn2 = Button(parent,
                            text="...",
@@ -50,10 +45,6 @@ class Publisher:
                            height=1,
                            command=self.pubcheck)
 
-        self.entry1 = Entry(parent,
-                            width=40,
-                            bd=3)
-
         self.entry2 = Entry(parent,
                             width=40,
                             bd=3)
@@ -66,9 +57,6 @@ class Publisher:
                             width=40,
                             bd=3)
 
-        self.label1 = Label(parent,
-                            text="Project file path:")
-
         self.label2 = Label(parent,
                             text="Template file path:")
 
@@ -79,12 +67,7 @@ class Publisher:
                             text="Output folder:")
 
         self.elements_placing()
-
-    def get_projpath(self):
-
-        self.entry1.delete(0, END)
-        self.projpath = str(askopenfilename(filetype=[('Adoc file', '*.adoc'), ('Text file', '*.txt')]))
-        self.entry1.insert(END, self.projpath)
+        noproj_notifier(self.path, parent)
 
     def get_template(self):
         self.entry2.delete(0, END)
@@ -123,12 +106,12 @@ class Publisher:
         else:
             self.fonts = ""
 
-        self.projectplace = " \"" + self.projpath + "\""
+        self.projectplace = " \"" + self.path + "\""
         self.outputplace = " -D " + os.path.normpath(self.outfolder)
 
     def postpub(self):
 
-        self.pubbed_file = os.path.basename(self.projpath).replace(".adoc", ".pdf")
+        self.pubbed_file = os.path.basename(self.path).replace(".adoc", ".pdf")
 
         if self.var2.get():
             self.logcheck = subprocess.check_output(self.outtext, stderr=subprocess.STDOUT, shell=True).decode('UTF-8')
@@ -153,11 +136,11 @@ class Publisher:
 
     def pubcheck(self):
 
-        if self.entry1.get() in '':
+        if self.path in '':
             messagebox.showwarning("No Project File", "Specify path to the project file")
             return
 
-        if self.entry1.get() not in '':
+        if self.path not in '':
             if self.entry4.get() in '':
                 messagebox.showwarning("No output folder", "Specify output folder")
                 return
@@ -179,13 +162,11 @@ class Publisher:
 
     def elements_placing(self):
 
-        self.btn1.grid(column=3, row=1, padx=10, sticky=W)
         self.btn2.grid(column=3, row=2, padx=10, sticky=W)
         self.btn3.grid(column=3, row=3, pady=10, padx=10, sticky=W)
         self.btn4.grid(column=3, row=4, padx=10, sticky=W)
         self.btn5.grid(column=2, row=6, padx=0, pady=10, sticky=W)
 
-        self.entry1.grid(column=2, row=1, pady=20)
         self.entry2.grid(column=2, row=2)
         self.entry3.grid(column=2, row=3, pady=20, sticky=W)
         self.entry4.grid(column=2, row=4, sticky=W)
@@ -193,8 +174,6 @@ class Publisher:
         self.chbtn1.grid(column=1, row=5, padx=10, pady=10)
         self.chbtn2.grid(column=1, row=6, padx=10, pady=10, sticky=W)
 
-        self.label1.grid(column=1, row=1, pady=5, padx=10, sticky=W)
         self.label2.grid(column=1, row=2, pady=5, padx=10, sticky=W)
         self.label3.grid(column=1, row=3, pady=5, padx=10, sticky=W)
         self.label4.grid(column=1, row=4, pady=5, padx=10, sticky=W)
-

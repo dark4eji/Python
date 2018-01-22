@@ -1,7 +1,7 @@
 from tkinter import *
+from pack import file_menu
 
-
-class ProjectMenu:
+class MenuBuilder:
     """Generates Actions menu with cascades"""
     def __init__(self, parent, class_, name):
         self.class_ = class_
@@ -20,7 +20,7 @@ class ProjectMenu:
         self.filewin.grab_set()
         self.filewin.title(name)
         self.filewin.resizable(width=False, height=False)
-        self.class_(self.filewin)
+        self.class_(self.filewin, file_menu.FileMenuBuilder.project_path)
 
     def invoking_pub(self):
         """Translates class to the top-level window"""

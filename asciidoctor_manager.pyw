@@ -1,28 +1,51 @@
 from tkinter import *
-from pack import publisher as pub
-from pack import project_menu as a_m
-from pack import creator as cr
-from pack import renamer as rr
+from pack import publisher_class as pub
+from pack import menu_builder_class as a_m
+from pack import creator_class as cr
+from pack import renamer_class as rr
+from pack import file_menu as fm
+from pack import save_as as sa
 
 root = Tk()
 
+scrollbar = Scrollbar(root)
+text_box = Text(root, yscrollcommand=scrollbar.set)
+scrollbar.config(command=text_box.yview)
+scrollbar.pack(side=RIGHT, fill=Y)
+text_box.pack(side=LEFT, fill=BOTH)
+
+def get_e():
+    inp = text_box.get('1.0', END)
+    print(inp)
+
+get_e()
 # -------------
 # Menu bar
 rootbar = Menu(root, tearoff=0)
+
 actionmenu = Menu(rootbar, tearoff=0)
-rootbar.add_cascade(label="Project", menu=actionmenu)
+filemenu = Menu(rootbar, tearoff=0)
+
+rootbar.add_cascade(label="File", menu=filemenu)
+rootbar.add_cascade(label="Operations", menu=actionmenu)
 
 publisher = pub.Publisher
 creator = cr.Creator
 renamer = rr.Renamer
 
-project_menu_interface = a_m.ProjectMenu
+saveas = sa.SaveAs
+file_menu = fm.FileMenuBuilder
 
-project_menu_interface(actionmenu, publisher, "Publish Project")
-project_menu_interface(actionmenu, creator, "Create Topic")
-project_menu_interface(actionmenu, renamer, "Rename Topic")
+
+saveas(filemenu, "Save As", get_e())
+file_menu(filemenu, "Open Project")
+
+operations_menu_interface = a_m.MenuBuilder
+
+operations_menu_interface(actionmenu, publisher, "Publish")
+operations_menu_interface(actionmenu, creator, "Create Topic")
+operations_menu_interface(actionmenu, renamer, "Rename Topic")
 # -------------
-
 root.config(menu=rootbar)
 root.title('Asciidoctor Manager')
 root.geometry('550x426')
