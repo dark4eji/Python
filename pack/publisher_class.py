@@ -3,7 +3,7 @@ from tkinter import messagebox
 import os
 import subprocess
 from pack.noproj_notifier import noproj_notifier
-import linecache
+
 
 class Publisher:
     def __init__(self, parent, path):
@@ -60,6 +60,19 @@ class Publisher:
         else:
             pass
 
+    def publishing(self):
+        self.get_pub_vars()
+        self.get_build()
+        self.outtext = "asciidoctor-pdf " + self.outputplace + self.fonts + self.template + self.build_name + self.projectplace
+        subprocess.call(self.outtext, shell=True)
+        self.postpub()
+
+    def get_build(self):
+        if self.rbvar.get() == 1:
+            self.build_name = " -a PLUS "
+        else:
+            self.build_name = " -a Enter "
+
     def get_pub_vars(self):
         self.projectplace = None
         self.template = None
@@ -77,6 +90,23 @@ class Publisher:
 
         self.projectplace = " \"" + self.path + "\""
         self.outputplace = " -D " + "\"" + os.path.normpath(self.outfolder) + "\""
+
+    def postpub(self):
+        self.pubbed_file = os.path.basename(self.path).replace(".adoc", ".pdf")
+        if self.var2.get():
+            self.logcheck = subprocess.check_output(self.outtext, stderr=subprocess.STDOUT, shell=True).decode('UTF-8')
+            if self.logcheck in '':
+                pass
+            elif self.logcheck not in '':
+                with open((os.path.join(os.path.abspath(self.outfolder), 'Log.txt')), 'w') as log:
+                    if self.pubbed_file not in os.listdir(self.outfolder):
+                        log.write(self.logcheck + self.pubbed_file + " Is not published")
+                    else:
+                        log.write(self.logcheck)
+                self.result = messagebox.askyesno("Issues", "Issues occurred while publishing. Show log file?")
+                if self.result:
+                    os.system("explorer.exe " + os.path.join(os.path.abspath(self.outfolder), 'Log.txt'))
+        self.openpdf()
 
     def openpdf(self):
         self.openfile = os.path.join(self.outfolder, self.pubbed_file)
@@ -101,42 +131,9 @@ class Publisher:
 
         if self.fontfolder is None:
             self.fontfolder = ''
-
         self.publishing()
 
-    def publishing(self):
-        self.get_pub_vars()
-        self.get_build()
-        self.outtext = "asciidoctor-pdf " + self.outputplace + self.fonts + self.template + self.build_name + self.projectplace
-        subprocess.call(self.outtext, shell=True)
-        self.postpub()
-
-    def postpub(self):
-        self.pubbed_file = os.path.basename(self.path).replace(".adoc", ".pdf")
-
-        if self.var2.get():
-            self.logcheck = subprocess.check_output(self.outtext, stderr=subprocess.STDOUT, shell=True).decode('UTF-8')
-            if self.logcheck in '':
-                pass
-            elif self.logcheck not in '':
-                with open((os.path.join(os.path.abspath(self.outfolder), 'Log.txt')), 'w') as log:
-                    if self.pubbed_file not in os.listdir(self.outfolder):
-                        log.write(self.logcheck + self.pubbed_file + " Is not published")
-                    else:
-                        log.write(self.logcheck)
-                self.result = messagebox.askyesno("Issues", "Issues occurred while publishing. Show log file?")
-                if self.result:
-                    os.system("explorer.exe " + os.path.join(os.path.abspath(self.outfolder), 'Log.txt'))
-
-        self.openpdf()
-    def get_build(self):
-        if self.rbvar.get() == 1:
-            self.build_name = " -a PLUS "
-        else:
-            self.build_name = ""
-
     def elements_placing(self):
-
         self.btn2.grid(column=3, row=2, padx=10, sticky=W)
         self.btn3.grid(column=3, row=3, pady=10, padx=10, sticky=W)
         self.btn4.grid(column=3, row=4, padx=10, sticky=W)

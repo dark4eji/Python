@@ -23,7 +23,7 @@ class Renamer:
 
     def get_current_topic_name(self):
         self.entry2.delete(0, END)
-        self.entry2.insert(END, askopenfilename(filetype=[('Adoc file', '*.adoc')]))
+        self.entry2.insert(END, os.path.normpath(askopenfilename(filetype=[('Adoc file', '*.adoc')])))
 
     def renamer(self):
         if self.entry2.get() in "":
