@@ -1,7 +1,7 @@
 from tkinter import messagebox
 from tkinter.filedialog import *
 import fileinput
-from pack.noproj_notifier import noproj_notifier
+from pack.func_pack import no_project_notifier
 
 
 class Renamer:
@@ -19,7 +19,7 @@ class Renamer:
         self.btn3 = Button(parent, text="Rename", width=7, height=1, command=self.renamer)
 
         self.elements_placing()
-        noproj_notifier(self.path, parent)
+        no_project_notifier(self.path, parent)
 
     def get_current_topic_name(self):
         self.entry2.delete(0, END)
@@ -70,7 +70,6 @@ class Renamer:
                 line = line.replace(self.to_change, self.to_final).strip()
                 print(line)
         return
-
 
     def elements_placing(self):
         self.label2.grid(column=1, row=1, pady=10, padx=10, sticky=NW)

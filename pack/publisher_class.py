@@ -1,8 +1,10 @@
+import traceback
+import logging
 from tkinter.filedialog import *
 from tkinter import messagebox
 import os
 import subprocess
-from pack.noproj_notifier import noproj_notifier
+from pack.func_pack import no_project_notifier
 
 
 class Publisher:
@@ -37,34 +39,44 @@ class Publisher:
         self.label4 = Label(parent, text="Output folder:")
 
         self.elements_placing()
-        noproj_notifier(self.path, parent)
+        no_project_notifier(self.path, parent)
 
     def get_template(self):
         self.entry2.delete(0, END)
         self.temppath = os.path.normpath(str(askopenfilename(filetype=[('Template file', '*.yml')])))
-        self.entry2.insert(END, self.temppath)
+        self.entry2.insert(END, os.path.normpath(self.temppath))
+        self.entry2.delete(0, END) if self.entry2.get() in "." else True
 
     def get_fontfolder(self):
         self.entry3.delete(0, END)
         self.fontfolder = os.path.normpath(str(askdirectory()))
-        self.entry3.insert(END, self.fontfolder)
+        self.entry3.insert(END, os.path.normpath(self.fontfolder))
+        self.entry3.delete(0, END) if self.entry3.get() in "." else True
 
     def get_outfolder(self):
         self.entry4.delete(0, END)
         self.outfolder = os.path.normpath(str(askdirectory()))
-        self.entry4.insert(END, self.outfolder)
-        if self.entry4.get() in "D:/" or self.entry4.get() in "C:/":
-            messagebox.showwarning("Wrong path", "Output folder should not be a root")
-            self.entry4.delete(0, END)
-            return
-        else:
-            pass
+        print(self.outfolder)
+        self.entry4.insert(END, os.path.normpath(self.outfolder))
+        self.entry4.delete(0, END) if self.entry4.get() in "." else True
+        print(self.entry4.get())
+        # if self.entry4.get() in "D:\\":
+        #     messagebox.showwarning("Wrong path", "Output folder should not be a root")
+        #     #self.entry4.delete(0, END)
+        #     return
+        # else:
+        #     pass
 
     def publishing(self):
         self.get_pub_vars()
         self.get_build()
         self.outtext = "asciidoctor-pdf " + self.outputplace + self.fonts + self.template + self.build_name + self.projectplace
-        subprocess.call(self.outtext, shell=True)
+        try:
+            subprocess.call(self.outtext, shell=True)
+        except Exception as e:
+            logging.error(traceback.format_exc())
+            messagebox.showerror("Error", "Error occured")
+        self.openpdf()
         self.postpub()
 
     def get_build(self):
@@ -92,29 +104,33 @@ class Publisher:
         self.outputplace = " -D " + "\"" + os.path.normpath(self.outfolder) + "\""
 
     def postpub(self):
-        self.pubbed_file = os.path.basename(self.path).replace(".adoc", ".pdf")
+        if self.var1.get() is False:
+            if os.path.exists(os.path.join(self.outfolder, self.pubbed_file)):
+                messagebox.showinfo("Successful publishing", "Project published successfully")
+            else:
+                messagebox.showwarning("No File", "Project was not published")
+                return
+
         if self.var2.get():
             self.logcheck = subprocess.check_output(self.outtext, stderr=subprocess.STDOUT, shell=True).decode('UTF-8')
             if self.logcheck in '':
                 pass
             elif self.logcheck not in '':
                 with open((os.path.join(os.path.abspath(self.outfolder), 'Log.txt')), 'w') as log:
-                    if self.pubbed_file not in os.listdir(self.outfolder):
-                        log.write(self.logcheck + self.pubbed_file + " Is not published")
-                    else:
-                        log.write(self.logcheck)
+                    log.write(self.logcheck)
                 self.result = messagebox.askyesno("Issues", "Issues occurred while publishing. Show log file?")
                 if self.result:
                     os.system("explorer.exe " + os.path.join(os.path.abspath(self.outfolder), 'Log.txt'))
-        self.openpdf()
 
     def openpdf(self):
+        self.pubbed_file = os.path.basename(self.path).replace(".adoc", ".pdf")
         self.openfile = os.path.join(self.outfolder, self.pubbed_file)
         if self.var1.get():
             try:
                 os.startfile("" + self.openfile + "", 'open')
-            except NameError:
-                self.error_pub = True
+            except FileNotFoundError:
+                messagebox.showwarning("No File", "Project was not published")
+                return
 
     def pubcheck(self):
         if self.path in '':

@@ -1,6 +1,6 @@
 from tkinter import messagebox
 from tkinter.filedialog import *
-from pack.noproj_notifier import noproj_notifier
+from pack.func_pack import no_project_notifier
 
 class Creator:
     def __init__(self, parent, path):
@@ -20,7 +20,7 @@ class Creator:
         self.leveloffsetlistval = ["No leveloffset", "+1", "+2", "+3", "-1", "-2", "-3", "0", "1", "2", "3", "4", "5"]
         self.leveloffsetlist = OptionMenu(parent, self.leveloffsetvar, *self.leveloffsetlistval)
         self.elements_placing()
-        noproj_notifier(self.path, parent)
+        no_project_notifier(self.path, parent)
 
 
     def leveloffset(self):

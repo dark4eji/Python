@@ -1,1 +1,2 @@
-__all__ = ['publisher_class.py', 'editor', 'creator_class.py', 'renamer_class.py', 'file_menu.py', 'noproj_notifier']
+__all__ = ['publisher_class', 'creator_class', 'renamer_class', 'open_project_class',
+           'func_pack','menu_constructor_class']
