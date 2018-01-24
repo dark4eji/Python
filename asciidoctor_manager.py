@@ -1,8 +1,5 @@
 from tkinter import *
 from pack.menu_constructor_class import MenuConstructor as Mc
-
-import os
-import pickle
 # scrollbar = Scrollbar(root)
 # text_box = Text(root, yscrollcommand=scrollbar.set)
 # scrollbar.config(command=text_box.yview)
@@ -14,7 +11,6 @@ class AM():
     def __init__(self, parent):
         self.parent = parent
         Mc(parent)
-
 
 if __name__ == "__main__":
     root = Tk()

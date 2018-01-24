@@ -8,3 +8,6 @@ def no_project_notifier(project_path, parent):
         parent.destroy()
     else:
         pass
+
+def destroyer(obj):
+    obj.destroy()
