@@ -56,7 +56,7 @@ class Renamer:
 
         os.rename(self.entry2.get(), os.path.join(self.topic_dir, self.new_topic_name + ".adoc"))
 
-        if self.new_topic_name + ".adoc" in os.listdir(self.topic_dir):
+        if os.path.join(self.topic_dir, (self.new_topic_name + ".adoc")):
              messagebox.showinfo("Renaming File", "Topic renamed successfully!")
 
         self.to_change = "include::" + os.path.join("topics", os.path.basename(self.entry2.get())) + "[]"

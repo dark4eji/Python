@@ -4,11 +4,15 @@ from pack.open_project_class import OpenProject as Op
 from pack.publisher_class import Publisher
 from pack.renamer_class import Renamer
 from pack.creator_class import Creator
+from pack.open_file_class import OpenFile
+from pack.text_box_class import TextBox
+from pack.save_as_class import SaveAs
 
 
 class MenuConstructor():
     """Class that constructs menu bar"""
     def __init__(self, parent):
+        self.Tb = TextBox(parent)
         self.parent = parent
         self.rootbar = Menu(parent, tearoff=0)
         self.actionmenu = Menu(self.rootbar, tearoff=0)
@@ -33,8 +37,13 @@ class MenuConstructor():
         self.build_ren = Om
         self.build_cr = Om
         self.open_project = Op
+        self.open_file = OpenFile
+        self.save_as_file = SaveAs
 
         self.build_pub(self.actionmenu, self.publisher, "Publish")
         self.build_cr(self.actionmenu, self.creator, "Create Topic")
         self.build_ren(self.actionmenu, self.renamer, "Rename Topics")
         self.open_project(self.filemenu, self.parent, "Open Project")
+        self.open_file(self.filemenu, self.Tb, "Open Topic File")
+        self.save_as_file(self.filemenu, self.Tb, "Save As")
+

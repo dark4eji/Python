@@ -27,22 +27,12 @@ class OpenProject:
                 return
 
         if self.check == 0:
-            self.session.destroy()
             OpenProject.preserved_path = OpenProject.project_path
-            self.call_lable(root)
         else:
             OpenProject.preserved_path = OpenProject.project_path
-            print(OpenProject.preserved_path)
-            print(self.project_path)
-            self.call_lable(root)
-            self.check = 0
+            root.title('Asciidoctor Manager' + " [" + OpenProject.preserved_path + "]")
 
     def get_projpath(self):
         """Used for specifying a path to the project file"""
         OpenProject.project_path = os.path.normpath(askopenfilename(filetype=[('Adoc file', '*.adoc')]))
         self.session_label(self.root)
-
-    def call_lable(self, root):
-        self.session = Label(root, text="Current project: " + os.path.basename(OpenProject.preserved_path).replace(
-            ".adoc", ""))
-        self.session.grid(column=1, row=2)

@@ -4,7 +4,7 @@ from tkinter.filedialog import *
 from tkinter import messagebox
 import os
 import subprocess
-from pack.func_pack import no_project_notifier
+from pack.func_pack import no_project_notifier, field_check
 
 
 class Publisher:
@@ -41,36 +41,31 @@ class Publisher:
         self.elements_placing()
         no_project_notifier(self.path, parent)
 
+    def get_outfolder(self):
+        """Gets a path to the output folder"""
+        self.outfolder = os.path.normpath(str(askdirectory()))
+        if self.outfolder in "D:\\":
+            messagebox.showwarning("Wrong path", "Output folder should not be a root")
+            del self.outfolder
+            return
+        field_check(self.outfolder, self.entry4)
+
     def get_template(self):
-        self.entry2.delete(0, END)
+        """Gets a path to the template folder"""
         self.temppath = os.path.normpath(str(askopenfilename(filetype=[('Template file', '*.yml')])))
-        self.entry2.insert(END, os.path.normpath(self.temppath))
-        self.entry2.delete(0, END) if self.entry2.get() in "." else True
+        field_check(self.temppath, self.entry2)
 
     def get_fontfolder(self):
-        self.entry3.delete(0, END)
+        """Gets a path to the fonts folder"""
         self.fontfolder = os.path.normpath(str(askdirectory()))
-        self.entry3.insert(END, os.path.normpath(self.fontfolder))
-        self.entry3.delete(0, END) if self.entry3.get() in "." else True
+        field_check(self.fontfolder, self.entry3)
 
-    def get_outfolder(self):
-        self.entry4.delete(0, END)
-        self.outfolder = os.path.normpath(str(askdirectory()))
-        print(self.outfolder)
-        self.entry4.insert(END, os.path.normpath(self.outfolder))
-        self.entry4.delete(0, END) if self.entry4.get() in "." else True
-        print(self.entry4.get())
-        # if self.entry4.get() in "D:\\":
-        #     messagebox.showwarning("Wrong path", "Output folder should not be a root")
-        #     #self.entry4.delete(0, END)
-        #     return
-        # else:
-        #     pass
 
     def publishing(self):
         self.get_pub_vars()
         self.get_build()
-        self.outtext = "asciidoctor-pdf " + self.outputplace + self.fonts + self.template + self.build_name + self.projectplace
+        self.outtext = "asciidoctor-pdf " + self.outputplace.replace("\\", "/") + self.fonts + self.template + self.build_name + self.projectplace
+        print(self.outtext)
         try:
             subprocess.call(self.outtext, shell=True)
         except Exception as e:
@@ -101,7 +96,7 @@ class Publisher:
             self.fonts = ""
 
         self.projectplace = " \"" + self.path + "\""
-        self.outputplace = " -D " + "\"" + os.path.normpath(self.outfolder) + "\""
+        self.outputplace = "-D " + "\"" + os.path.normpath(self.outfolder) + "\""
 
     def postpub(self):
         if self.var1.get() is False:
@@ -150,21 +145,21 @@ class Publisher:
         self.publishing()
 
     def elements_placing(self):
-        self.btn2.grid(column=3, row=2, padx=10, sticky=W)
+        self.btn2.grid(column=3, row=4, padx=10, sticky=W)
         self.btn3.grid(column=3, row=3, pady=10, padx=10, sticky=W)
-        self.btn4.grid(column=3, row=4, padx=10, sticky=W)
+        self.btn4.grid(column=3, row=2, padx=10, sticky=W)
         self.btn5.grid(column=2, row=6, padx=0, pady=10, sticky=W)
 
         self.radiobut_enter.grid(column=2, row=5, sticky=E)
         self.radiobut_plus.grid(column=2, row=5, sticky=EW)
 
-        self.entry2.grid(column=2, row=2)
+        self.entry2.grid(column=2, row=4, sticky=W)
         self.entry3.grid(column=2, row=3, pady=20, sticky=W)
-        self.entry4.grid(column=2, row=4, sticky=W)
+        self.entry4.grid(column=2, row=2, sticky=W)
 
         self.chbtn1.grid(column=1, row=5, padx=10, pady=10)
         self.chbtn2.grid(column=1, row=6, padx=10, pady=10, sticky=W)
 
-        self.label2.grid(column=1, row=2, pady=5, padx=10, sticky=W)
+        self.label2.grid(column=1, row=4, pady=5, padx=10, sticky=W)
         self.label3.grid(column=1, row=3, pady=5, padx=10, sticky=W)
-        self.label4.grid(column=1, row=4, pady=5, padx=10, sticky=W)
+        self.label4.grid(column=1, row=2, pady=5, padx=10, sticky=W)
