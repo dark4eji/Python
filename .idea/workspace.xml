@@ -2,20 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3803dbbe-a93c-482a-9cf7-178300bd9887" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/pack/full_screen_class.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/pack/open_file_class.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/pack/save_file_class.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/pack/text_box_class.py" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/asciidoctor_manager.exe" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/asciidoctor_manager.py" afterPath="$PROJECT_DIR$/asciidoctor_manager.py" />
-      <change beforePath="$PROJECT_DIR$/pack/__init__.py" afterPath="$PROJECT_DIR$/pack/__init__.py" />
-      <change beforePath="$PROJECT_DIR$/pack/func_pack.py" afterPath="$PROJECT_DIR$/pack/func_pack.py" />
-      <change beforePath="$PROJECT_DIR$/pack/menu_constructor_class.py" afterPath="$PROJECT_DIR$/pack/menu_constructor_class.py" />
-      <change beforePath="$PROJECT_DIR$/pack/open_project_class.py" afterPath="$PROJECT_DIR$/pack/open_project_class.py" />
       <change beforePath="$PROJECT_DIR$/pack/publisher_class.py" afterPath="$PROJECT_DIR$/pack/publisher_class.py" />
-      <change beforePath="$PROJECT_DIR$/pack/renamer_class.py" afterPath="$PROJECT_DIR$/pack/renamer_class.py" />
-      <change beforePath="$PROJECT_DIR$/pack/save_as.py" afterPath="$PROJECT_DIR$/pack/save_as_class.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -26,11 +13,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="asciidoctor_manager.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="asciidoctor_manager.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/asciidoctor_manager.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="221">
-              <caret line="15" column="4" lean-forward="true" selection-start-line="15" selection-start-column="4" selection-end-line="15" selection-end-column="37" />
+            <state relative-caret-position="306">
+              <caret line="20" column="0" lean-forward="true" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -39,8 +26,8 @@
       <file leaf-file-name="open_project_class.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/pack/open_project_class.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="499">
-              <caret line="38" column="0" lean-forward="true" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
+            <state relative-caret-position="629">
+              <caret line="38" column="0" lean-forward="false" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -49,8 +36,8 @@
       <file leaf-file-name="menu_constructor_class.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/pack/menu_constructor_class.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="74">
-              <caret line="24" column="29" lean-forward="true" selection-start-line="24" selection-start-column="29" selection-end-line="24" selection-end-column="29" />
+            <state relative-caret-position="346">
+              <caret line="24" column="29" lean-forward="false" selection-start-line="24" selection-start-column="29" selection-end-line="24" selection-end-column="29" />
               <folding>
                 <element signature="e#0#32#0" expanded="true" />
               </folding>
@@ -58,11 +45,43 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="publisher_class.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/pack/publisher_class.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="2550">
+              <caret line="150" column="32" lean-forward="true" selection-start-line="150" selection-start-column="32" selection-end-line="150" selection-end-column="32" />
+              <folding>
+                <element signature="e#0#16#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="creator_class.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/pack/creator_class.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="51">
+              <caret line="5" column="37" lean-forward="false" selection-start-line="5" selection-start-column="37" selection-end-line="5" selection-end-column="37" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="func_pack.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/pack/func_pack.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="340">
+              <caret line="21" column="0" lean-forward="true" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="text_box_class.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/pack/text_box_class.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
-              <caret line="19" column="0" lean-forward="true" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
+            <state relative-caret-position="306">
+              <caret line="19" column="0" lean-forward="false" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -99,6 +118,7 @@
       <find>Output folder should not be a root</find>
       <find>dir</find>
       <find>list</find>
+      <find>self.temppath</find>
     </findStrings>
     <replaceStrings>
       <replace>tk.Label</replace>
@@ -109,6 +129,7 @@
       <replace>self.path</replace>
       <replace>no_project_notifier</replace>
       <replace>parent</replace>
+      <replace>self.temppath_red</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -157,7 +178,6 @@
         <option value="$PROJECT_DIR$/pack/operations_menu_class.py" />
         <option value="$PROJECT_DIR$/pack/renamer_class.py" />
         <option value="$PROJECT_DIR$/pack/func_pack.py" />
-        <option value="$PROJECT_DIR$/pack/publisher_class.py" />
         <option value="$PROJECT_DIR$/pack/full_screen_class.py" />
         <option value="$PROJECT_DIR$/pack/save_file_class.py" />
         <option value="$PROJECT_DIR$/pack/open_file_class.py" />
@@ -167,6 +187,7 @@
         <option value="$PROJECT_DIR$/asciidoctor_manager.py" />
         <option value="$PROJECT_DIR$/pack/text_box_class.py" />
         <option value="$PROJECT_DIR$/pack/open_project_class.py" />
+        <option value="$PROJECT_DIR$/pack/publisher_class.py" />
       </list>
     </option>
   </component>
@@ -191,6 +212,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -207,8 +230,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -358,11 +379,12 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2297155" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33441558" sideWeight="0.30189672" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2943723" sideWeight="0.69810325" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2943723" sideWeight="0.69810325" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.12908325" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -402,7 +424,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="5" />
+      <option name="time" value="6" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -474,13 +496,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/pack/editor.py" />
-    <entry file="file://$PROJECT_DIR$/pack/creator_class.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="37" lean-forward="false" selection-start-line="5" selection-start-column="37" selection-end-line="5" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/pack/renamer_class.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="231">
@@ -492,20 +507,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pack/publisher_class.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1275">
-          <caret line="81" column="0" lean-forward="true" selection-start-line="81" selection-start-column="0" selection-end-line="81" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pack/func_pack.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="21" column="0" lean-forward="true" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -534,14 +535,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
           <caret line="8" column="0" lean-forward="true" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/pack/text_box_class.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="19" column="0" lean-forward="true" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
+        <state relative-caret-position="306">
+          <caret line="19" column="0" lean-forward="false" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -550,33 +550,58 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="289">
           <caret line="17" column="0" lean-forward="false" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pack/creator_class.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="5" column="37" lean-forward="false" selection-start-line="5" selection-start-column="37" selection-end-line="5" selection-end-column="37" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pack/menu_constructor_class.py">
+    <entry file="file://$PROJECT_DIR$/pack/func_pack.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="74">
-          <caret line="24" column="29" lean-forward="true" selection-start-line="24" selection-start-column="29" selection-end-line="24" selection-end-column="29" />
-          <folding>
-            <element signature="e#0#32#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pack/open_project_class.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="499">
-          <caret line="38" column="0" lean-forward="true" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
+        <state relative-caret-position="340">
+          <caret line="21" column="0" lean-forward="true" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/asciidoctor_manager.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="15" column="4" lean-forward="true" selection-start-line="15" selection-start-column="4" selection-end-line="15" selection-end-column="37" />
+        <state relative-caret-position="306">
+          <caret line="20" column="0" lean-forward="true" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pack/open_project_class.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="629">
+          <caret line="38" column="0" lean-forward="false" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pack/menu_constructor_class.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="346">
+          <caret line="24" column="29" lean-forward="false" selection-start-line="24" selection-start-column="29" selection-end-line="24" selection-end-column="29" />
+          <folding>
+            <element signature="e#0#32#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pack/publisher_class.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2550">
+          <caret line="150" column="32" lean-forward="true" selection-start-line="150" selection-start-column="32" selection-end-line="150" selection-end-column="32" />
+          <folding>
+            <element signature="e#0#16#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

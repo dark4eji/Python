@@ -5,9 +5,11 @@ from tkinter import messagebox
 import os
 import subprocess
 from pack.func_pack import no_project_notifier, field_check
+import _pickle as cPickle
 
 
 class Publisher:
+    pub_conf = os.path.join("C:", "ProgramData", "AMConf", "pub_conf")
     def __init__(self, parent, path):
         self.config_path = os.path.join('C:', 'ProgramData', 'pub_conf')
         self.path = path
@@ -26,7 +28,6 @@ class Publisher:
         self.chbtn2 = Checkbutton(parent, text="Create log file", variable=self.var2)
 
         self.btn2 = Button(parent, text="...", width=3, height=1, command=self.get_template)
-        self.btn3 = Button(parent, text="...", width=3, height=1, command=self.get_fontfolder)
         self.btn4 = Button(parent, text="...", width=3, height=1, command=self.get_outfolder)
         self.btn5 = Button(parent, text="Publish", width=20, height=1, command=self.pubcheck)
 
@@ -53,19 +54,25 @@ class Publisher:
     def get_template(self):
         """Gets a path to the template folder"""
         self.temppath = os.path.normpath(str(askopenfilename(filetype=[('Template file', '*.yml')])))
-        field_check(self.temppath, self.entry2)
+        if self.temppath in '.':
+            return
+        else:
+            self.temppath_red = self.temppath
+        self.fontfolder = os.path.join(os.path.dirname(self.temppath_red), "sptt_fonts")
 
-    def get_fontfolder(self):
-        """Gets a path to the fonts folder"""
-        self.fontfolder = os.path.normpath(str(askdirectory()))
-        field_check(self.fontfolder, self.entry3)
-
+        if os.path.exists(self.fontfolder):
+            pass
+        else:
+            print(self.fontfolder)
+            messagebox.showwarning("No fonts", "No fonts found. Place the 'sptt_fonts' folder with fonts to the template folder. \nDefault template will be used.")
+            self.temppath_red, self.fontfolder = '', ''
+            return
+        field_check(self.temppath_red, self.entry2)
 
     def publishing(self):
         self.get_pub_vars()
         self.get_build()
         self.outtext = "asciidoctor-pdf " + self.outputplace.replace("\\", "/") + self.fonts + self.template + self.build_name + self.projectplace
-        print(self.outtext)
         try:
             subprocess.call(self.outtext, shell=True)
         except Exception as e:
@@ -85,8 +92,8 @@ class Publisher:
         self.template = None
         self.fonts = None
 
-        if self.temppath not in "":
-            self.template = " -a pdf-style=" + "\"" + self.temppath + "\"" + " "
+        if self.temppath_red not in "":
+            self.template = " -a pdf-style=" + "\"" + self.temppath_red + "\"" + " "
         else:
             self.template = ""
 
@@ -137,8 +144,8 @@ class Publisher:
                 messagebox.showwarning("No output folder", "Specify output folder")
                 return
 
-        if self.temppath is None:
-            self.temppath = ''
+        if self.temppath_red is None:
+            self.temppath_red = ''
 
         if self.fontfolder is None:
             self.fontfolder = ''
@@ -146,7 +153,6 @@ class Publisher:
 
     def elements_placing(self):
         self.btn2.grid(column=3, row=4, padx=10, sticky=W)
-        self.btn3.grid(column=3, row=3, pady=10, padx=10, sticky=W)
         self.btn4.grid(column=3, row=2, padx=10, sticky=W)
         self.btn5.grid(column=2, row=6, padx=0, pady=10, sticky=W)
 
@@ -154,12 +160,10 @@ class Publisher:
         self.radiobut_plus.grid(column=2, row=5, sticky=EW)
 
         self.entry2.grid(column=2, row=4, sticky=W)
-        self.entry3.grid(column=2, row=3, pady=20, sticky=W)
-        self.entry4.grid(column=2, row=2, sticky=W)
+        self.entry4.grid(column=2, row=2, pady=10, sticky=W)
 
         self.chbtn1.grid(column=1, row=5, padx=10, pady=10)
         self.chbtn2.grid(column=1, row=6, padx=10, pady=10, sticky=W)
 
         self.label2.grid(column=1, row=4, pady=5, padx=10, sticky=W)
-        self.label3.grid(column=1, row=3, pady=5, padx=10, sticky=W)
         self.label4.grid(column=1, row=2, pady=5, padx=10, sticky=W)
