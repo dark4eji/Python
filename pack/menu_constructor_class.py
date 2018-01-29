@@ -7,7 +7,7 @@ from pack.creator_class import Creator
 from pack.open_file_class import OpenFile
 from pack.text_box_class import TextBox
 from pack.save_as_class import SaveAs
-
+from pack.func_pack import config_writer, config_retriever
 
 class MenuConstructor():
     """Class that constructs menu bar"""
@@ -21,6 +21,8 @@ class MenuConstructor():
 
         self.cascade_adding()
         self.constructor()
+        Op.project_path = config_retriever('project_file', 'file_path')
+        self.parent.title('Asciidoctor Manager' + " [" + Op.project_path + "]")
 
     def cascade_adding(self):
         """Used for adding menus to the menu bar. The title for a new menu pack should be added here"""

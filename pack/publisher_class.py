@@ -4,17 +4,17 @@ from tkinter.filedialog import *
 from tkinter import messagebox
 import os
 import subprocess
-from pack.func_pack import no_project_notifier, field_check
-import _pickle as cPickle
+from pack.func_pack import no_project_notifier, field_check, config_writer, config_retriever
 
 
 class Publisher:
-    pub_conf = os.path.join("C:", "ProgramData", "AMConf", "pub_conf")
     def __init__(self, parent, path):
-        self.config_path = os.path.join('C:', 'ProgramData', 'pub_conf')
+        self.pub_conf = os.path.join('C:\\', 'ProgramData', 'AMConf', 'data')
         self.path = path
+        self.temppath_red = None
         self.temppath = None
         self.fontfolder = None
+        self.l = None
 
         self.rbvar = IntVar()
         self.rbvar.set(1)
@@ -32,7 +32,6 @@ class Publisher:
         self.btn5 = Button(parent, text="Publish", width=20, height=1, command=self.pubcheck)
 
         self.entry2 = Entry(parent, width=40, bd=3)
-        self.entry3 = Entry(parent, width=40, bd=3)
         self.entry4 = Entry(parent, width=40, bd=3)
 
         self.label2 = Label(parent, text="Template file path:")
@@ -42,6 +41,12 @@ class Publisher:
         self.elements_placing()
         no_project_notifier(self.path, parent)
 
+        if os.path.exists(os.path.join('C:', 'ProgramData', 'config.ini')):
+            self.outfolder = config_retriever('publisher', 'output')
+            self.entry4.insert(END, str(self.outfolder))
+            self.temppath = config_retriever('publisher', 'tempfile')
+            self.entry2.insert(END, str(self.temppath))
+
     def get_outfolder(self):
         """Gets a path to the output folder"""
         self.outfolder = os.path.normpath(str(askdirectory()))
@@ -50,6 +55,7 @@ class Publisher:
             del self.outfolder
             return
         field_check(self.outfolder, self.entry4)
+        config_writer('publisher', 'output', self.outfolder)
 
     def get_template(self):
         """Gets a path to the template folder"""
@@ -68,10 +74,12 @@ class Publisher:
             self.temppath_red, self.fontfolder = '', ''
             return
         field_check(self.temppath_red, self.entry2)
-
+        self.derek = config_writer('publisher', 'tempfile', self.temppath_red)
     def publishing(self):
+
         self.get_pub_vars()
         self.get_build()
+
         self.outtext = "asciidoctor-pdf " + self.outputplace.replace("\\", "/") + self.fonts + self.template + self.build_name + self.projectplace
         try:
             subprocess.call(self.outtext, shell=True)
