@@ -10,8 +10,7 @@ from pack.func_pack import no_project_notifier, field_check, config_writer, conf
 class Publisher:
     def __init__(self, parent, path):
         self.pub_conf = os.path.join('C:\\', 'ProgramData', 'AMConf', 'data')
-        self.path = path
-        self.temppath_red = None
+        self.path = path        
         self.temppath = None
         self.fontfolder = None
         self.l = None
@@ -42,9 +41,12 @@ class Publisher:
         no_project_notifier(self.path, parent)
 
         if os.path.exists(os.path.join('C:', 'ProgramData', 'config.ini')):
+            
             self.outfolder = config_retriever('publisher', 'output')
-            self.entry4.insert(END, str(self.outfolder))
             self.temppath = config_retriever('publisher', 'tempfile')
+            self.fontfolder = os.path.join(os.path.dirname(self.temppath), "sptt_fonts")
+                        
+            self.entry4.insert(END, str(self.outfolder))        
             self.entry2.insert(END, str(self.temppath))
 
     def get_outfolder(self):
@@ -55,32 +57,30 @@ class Publisher:
             del self.outfolder
             return
         field_check(self.outfolder, self.entry4)
-        config_writer('publisher', 'output', self.outfolder)
-
+        config_writer('publisher', 'output', self.outfolder)        
+        
     def get_template(self):
         """Gets a path to the template folder"""
         self.temppath = os.path.normpath(str(askopenfilename(filetype=[('Template file', '*.yml')])))
         if self.temppath in '.':
-            return
-        else:
-            self.temppath_red = self.temppath
-        self.fontfolder = os.path.join(os.path.dirname(self.temppath_red), "sptt_fonts")
-
+            return            
+        self.fontfolder = os.path.join(os.path.dirname(self.temppath), "sptt_fonts")        
+        
         if os.path.exists(self.fontfolder):
             pass
-        else:
-            print(self.fontfolder)
+        else:            
             messagebox.showwarning("No fonts", "No fonts found. Place the 'sptt_fonts' folder with fonts to the template folder. \nDefault template will be used.")
-            self.temppath_red, self.fontfolder = '', ''
-            return
-        field_check(self.temppath_red, self.entry2)
-        self.derek = config_writer('publisher', 'tempfile', self.temppath_red)
+            self.temppath, self.fontfolder = '', ''
+            return        
+        field_check(self.temppath, self.entry2)        
+        config_writer('publisher', 'tempfile', self.temppath)
+                       
     def publishing(self):
-
         self.get_pub_vars()
         self.get_build()
 
         self.outtext = "asciidoctor-pdf " + self.outputplace.replace("\\", "/") + self.fonts + self.template + self.build_name + self.projectplace
+        print(self.outtext)
         try:
             subprocess.call(self.outtext, shell=True)
         except Exception as e:
@@ -98,13 +98,11 @@ class Publisher:
     def get_pub_vars(self):
         self.projectplace = None
         self.template = None
-        self.fonts = None
-
-        if self.temppath_red not in "":
-            self.template = " -a pdf-style=" + "\"" + self.temppath_red + "\"" + " "
+        self.fonts = None        
+        if self.temppath not in "":
+            self.template = " -a pdf-style=" + "\"" + self.temppath + "\"" + " "
         else:
-            self.template = ""
-
+            self.template = ""        
         if self.fontfolder not in "":
             self.fonts = " -a pdf-fontsdir=" + "\"" + self.fontfolder + "\"" + " "
         else:
@@ -152,8 +150,8 @@ class Publisher:
                 messagebox.showwarning("No output folder", "Specify output folder")
                 return
 
-        if self.temppath_red is None:
-            self.temppath_red = ''
+        if self.temppath is None:
+            self.temppath = ''
 
         if self.fontfolder is None:
             self.fontfolder = ''
