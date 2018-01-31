@@ -1,4 +1,4 @@
-from tkinter import *
+from tkinter import Toplevel
 from pack import open_project_class
 
 class OperationsMenu:
@@ -20,7 +20,7 @@ class OperationsMenu:
         self.filewin.grab_set()
         self.filewin.title(name)
         self.filewin.resizable(width=False, height=False)
-        self.class_(self.filewin, open_project_class.OpenProject.project_path)
+        self.class_(self.filewin, open_project_class.OpenProject.secured_project_path)
 
     def invoking_pub(self):
         """Translates class to the top-level window"""

@@ -14,7 +14,6 @@ class Publisher:
         self.temppath = None
         self.fontfolder = None
         self.l = None
-
         self.rbvar = IntVar()
         self.rbvar.set(1)
         self.radiobut_plus = Radiobutton(parent, text="PLUS", variable=self.rbvar, value=1)
