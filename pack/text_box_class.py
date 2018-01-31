@@ -1,8 +1,10 @@
-from tkinter import *
-from tkinter import font
-
+"""
+The module is used for building text box in the root window
+"""
+from tkinter import Scrollbar, Text, RIGHT, Y, LEFT, BOTH, YES, END, font
 
 class TextBox:
+    """The class build the text box"""
     def __init__(self, parent):
         self.Font = font.Font(family='Segoe UI', size=12)
         self.scrollbar = Scrollbar(parent)
@@ -10,10 +12,33 @@ class TextBox:
         self.scrollbar.config(command=self.text_box.yview)
         self.scrollbar.pack(side=RIGHT, fill=Y)
         self.text_box.pack(side=LEFT, fill=BOTH, expand=YES)
+        self.selected_text = None
 
     def get_text(self):
-       return self.text_box.get(1.0, END)
+        return (self.text_box.get(1.0, END)).strip()
 
     def insert_text(self, file):
-        with open(file, 'r') as f:
-            self.text_box.insert(1.0, f.read())
+        with open(file, 'r') as file:
+            self.text_box.delete(1.0, END)
+            self.text_box.insert(1.0, file.read())
+
+    def bold(self):
+        self.selected_text = self.text_box.selection_get()
+        self.selected_text_bold = ((self.selected_text).replace("*", "")).replace("_", "")
+        self.selected_text_bold = "*" + self.selected_text_bold + "*"
+        self.pos_start = self.text_box.search(self.selected_text, '1.0', stopindex=END)
+        self.pos_end = '{}+{}c'.format(self.pos_start, len(self.selected_text))
+        self.text_box.delete(self.pos_start, self.pos_end)
+        self.text_box.insert(self.pos_start, self.selected_text_bold)
+        del self.selected_text, self.selected_text_bold
+
+    def italic(self):
+        self.selected_text = self.text_box.selection_get()
+        self.selected_text_bold = ((self.selected_text).replace("_", '')).replace("*", "")
+        self.selected_text_bold = "_" + self.selected_text_bold + "_"
+        self.pos_start = self.text_box.search(self.selected_text, '1.0', stopindex=END)
+        self.pos_end = '{}+{}c'.format(self.pos_start, len(self.selected_text))
+        self.text_box.delete(self.pos_start, self.pos_end)
+        self.text_box.insert(self.pos_start, self.selected_text_bold)
+        del self.selected_text, self.selected_text_bold
+

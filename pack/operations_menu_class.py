@@ -1,5 +1,10 @@
+"""
+Module builds menus in 'Operations' cascade
+"""
+
 from tkinter import Toplevel
 from pack import open_project_class
+
 
 class OperationsMenu:
     """Generates Actions menu with cascades"""
@@ -7,10 +12,7 @@ class OperationsMenu:
         self.class_ = class_
         self.name = name
         self.parent = parent
-        self.constructing_menu()
-
-    def constructing_menu(self):
-        """Adds menu with the given name"""
+        self.filewin = None
         self.parent.add_command(label=self.name, command=self.invoking_pub)
 
     def creating_toplevel(self, menu, name):

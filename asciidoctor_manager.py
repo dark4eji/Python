@@ -1,7 +1,8 @@
-from tkinter import *
+import os
+from tkinter import Tk
 from pack.menu_constructor_class import MenuConstructor as Mc
 from pack.full_screen_class import FullScreenApp as FSA
-import os
+
 
 class AM:
     def __init__(self, parent):

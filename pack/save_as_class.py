@@ -1,4 +1,4 @@
-from tkinter.filedialog import *
+from tkinter.filedialog import asksaveasfilename
 
 
 class SaveAs:

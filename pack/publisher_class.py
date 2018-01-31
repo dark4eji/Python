@@ -1,9 +1,15 @@
+"""
+The module contains logic of project publishing, file opening,
+and logging
+"""
+
 import traceback
 import logging
-from tkinter.filedialog import *
-from tkinter import messagebox
 import os
 import subprocess
+from tkinter import messagebox, IntVar, Radiobutton, BooleanVar, Checkbutton, Button, Entry, \
+    Label, END, E, W, EW
+from tkinter.filedialog import askdirectory, askopenfilename
 from pack.func_pack import no_project_notifier, field_check, config_writer, config_retriever
 
 
@@ -18,7 +24,6 @@ class Publisher:
         self.rbvar.set(1)
         self.radiobut_plus = Radiobutton(parent, text="PLUS", variable=self.rbvar, value=1)
         self.radiobut_enter = Radiobutton(parent, text="Enterprise", variable=self.rbvar, value=2)
-
         self.var1 = BooleanVar()
         self.chbtn1 = Checkbutton(parent, text="Open file after publishing", variable=self.var1)
 
@@ -63,8 +68,7 @@ class Publisher:
         self.temppath = os.path.normpath(str(askopenfilename(filetype=[('Template file', '*.yml')])))
         if self.temppath in '.':
             return            
-        self.fontfolder = os.path.join(os.path.dirname(self.temppath), "sptt_fonts")        
-        
+        self.fontfolder = os.path.join(os.path.dirname(self.temppath), "sptt_fonts")
         if os.path.exists(self.fontfolder):
             pass
         else:            
@@ -77,7 +81,6 @@ class Publisher:
     def publishing(self):
         self.get_pub_vars()
         self.get_build()
-
         self.outtext = "asciidoctor-pdf " + self.outputplace.replace("\\", "/") + self.fonts + self.template + self.build_name + self.projectplace
         print(self.outtext)
         try:

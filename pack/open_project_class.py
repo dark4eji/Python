@@ -3,11 +3,14 @@ The class represents an Open Project menu that
 determines what 'project file' should be published
 """
 
-from tkinter.filedialog import *
+import os
+from tkinter.filedialog import askopenfilename
 from pack.func_pack import config_writer
 
 
 class OpenProject:
+    """The open project class is used for building a general path
+    to the project file"""
     project_path = None
     secured_project_path = None
 
@@ -24,7 +27,8 @@ class OpenProject:
 
     def get_projpath(self):
         """Used for specifying a path to the project file"""
-        OpenProject.project_path = os.path.normpath(askopenfilename(filetype=[('Adoc file', '*.adoc')]))
+        OpenProject.project_path = \
+            os.path.normpath(askopenfilename(filetype=[('Adoc file', '*.adoc')]))
         if OpenProject.project_path in '.':
             OpenProject.project_path = None
             return

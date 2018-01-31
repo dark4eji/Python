@@ -6,7 +6,7 @@ For additional information see class and methods docstrings.
 """
 
 import os
-from tkinter import Menu
+from tkinter import Menu, Frame, Entry, NW
 from pack.operations_menu_class import OperationsMenu
 from pack.open_project_class import OpenProject
 from pack.publisher_class import Publisher
@@ -16,6 +16,8 @@ from pack.open_file_class import OpenFile
 from pack.text_box_class import TextBox
 from pack.save_as_class import SaveAs
 from pack.func_pack import config_retriever
+from pack.bold_class import Bold
+from pack.italic_class import Italic
 
 class MenuConstructor:
     """Class that constructs menu bar"""
@@ -25,6 +27,13 @@ class MenuConstructor:
         self.actionmenu = Menu(self.rootbar, tearoff=0)  # builds "Operations" menu
         self.filemenu = Menu(self.rootbar, tearoff=0)  # builds "File" menu
         self.parent.config(menu=self.rootbar)
+        self.text_box_frame = Frame(parent)
+        self.formatting = Frame(parent, bd=3)
+        self.text_box_frame.grid(column=1, row=2)
+        self.formatting.grid(column=1, row=1, sticky=NW)
+        self.text = TextBox(self.text_box_frame)
+        Bold(self.formatting, self.text.bold)
+        Italic(self.formatting, self.text.italic)
         self.cascade_adding()
         self.constructor()
         if os.path.exists(os.path.join('C:', 'ProgramData', 'config.ini')):
@@ -51,5 +60,5 @@ class MenuConstructor:
         self.build_ren(self.actionmenu, Renamer, "Rename Topics")
 
         OpenProject(self.filemenu, self.parent, "Open Project")
-        OpenFile(self.filemenu, TextBox(self.parent), "Open Topic File")
-        SaveAs(self.filemenu, TextBox(self.parent), "Save As")
+        OpenFile(self.filemenu, self.text, "Open Topic File")
+        SaveAs(self.filemenu, self.text, "Save As")
