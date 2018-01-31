@@ -21,8 +21,9 @@ class MenuConstructor():
 
         self.cascade_adding()
         self.constructor()
-        Op.project_path = config_retriever('project_file', 'file_path')
-        self.parent.title('Asciidoctor Manager' + " [" + Op.project_path + "]")
+        if os.path.exists(os.path.join('C:', 'ProgramData', 'config.ini')):
+            Op.project_path = config_retriever('project_file', 'file_path')
+            self.parent.title('Asciidoctor Manager' + " [" + Op.project_path + "]")
 
     def cascade_adding(self):
         """Used for adding menus to the menu bar. The title for a new menu pack should be added here"""

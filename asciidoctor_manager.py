@@ -1,7 +1,7 @@
 from tkinter import *
 from pack.menu_constructor_class import MenuConstructor as Mc
 from pack.full_screen_class import FullScreenApp as FSA
-
+import os
 
 class AM:
     def __init__(self, parent):
@@ -13,7 +13,9 @@ if __name__ == "__main__":
     root = Tk()
     AM(root)
     FSA(root)
-    root.geometry('620x780')
+    if not os.path.exists(os.path.join('C:', 'ProgramData', 'config.ini')):
+        root.title("Asciidoctor Manager")
+    root.geometry('620x300')
     #  root.resizable(width=False, height=False)
     root.attributes("-topmost", 0)
     root.mainloop()
