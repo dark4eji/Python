@@ -5,7 +5,7 @@ is used for constructing the whole menu bar of the root window.
 For additional information see class and methods docstrings.
 """
 import os
-from tkinter import Menu, Frame, NW
+from tkinter import Menu, Frame, E
 from pack.operations_menu_class import OperationsMenu
 from pack.open_project_class import OpenProject
 from pack.publisher_class import Publisher
@@ -28,16 +28,18 @@ class MenuConstructor:
         self.filemenu = Menu(self.rootbar, tearoff=0)  # builds "File" menu
         self.parent.config(menu=self.rootbar)
 
-        self.text_box_frame = Frame(parent, bd=10)
-        self.formatting = Frame(parent, bd=3)
+        self.text_box_frame = Frame(self.parent, bd=10)
+        self.formatting = Frame(self.parent, bd=3)
+        self.text_box_frame.grid(column=1, row=2, sticky=E)
+        self.formatting.grid(column=1, row=1)
 
-        self.text_box_frame.grid(column=1, row=2, columnspan=2, rowspan=2)
-        self.formatting.grid(column=1, row=1, sticky=NW, columnspan=4)
         self.text = TextBox(self.text_box_frame)
 
         Bold(self.formatting, TextBox.selected_text, parent)
         Italic(self.formatting, TextBox.selected_text, parent)
         Regular(self.formatting, TextBox.selected_text, parent)
+
+
 
         self.cascade_adding()
         self.constructor()
@@ -65,5 +67,5 @@ class MenuConstructor:
         self.build_ren(self.actionmenu, Renamer, "Rename Topics")
 
         OpenProject(self.filemenu, self.parent, "Open Project")
-        OpenFile(self.filemenu, self.text, "Open Topic File")
-        SaveAs(self.filemenu, self.text, "Save As")
+        # OpenFile(self.filemenu, self.text, "Open Topic File")
+        # SaveAs(self.filemenu, self.text, "Save As")

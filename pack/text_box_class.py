@@ -11,9 +11,9 @@ class TextBox:
         self.scrollbar = Scrollbar(parent)
         self.text_box = Text(parent, yscrollcommand=self.scrollbar.set, font=self.Font)
         self.scrollbar.config(command=self.text_box.yview)
-        TextBox.selected_text = self.text_box
         self.scrollbar.pack(side=RIGHT, fill=Y)
         self.text_box.pack(side=LEFT, fill=BOTH, expand=True)
+        TextBox.selected_text = self.text_box
 
     def get_text(self):
         return (self.text_box.get(1.0, END)).strip()
