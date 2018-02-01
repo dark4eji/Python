@@ -1,4 +1,4 @@
-from tkinter import Button, W, E, SEL_FIRST, SEL_LAST, _tkinter
+from tkinter import Button, W, E, SEL_FIRST, SEL_LAST, _tkinter, EW
 
 
 class Bold:
@@ -6,7 +6,7 @@ class Bold:
         self.parent = parent
         self.textbox = textbox
         self.bold_but = Button(parent, text='Bold')
-        self.bold_but.grid(column=1, row=1, sticky=W)
+        self.bold_but.grid(column=3, row=1, sticky=W, padx=2)
         self.bold_but.bind("<Button-1>", self.transformer)
         root.bind("<Control-KeyPress-b>", self.transformer)
 
@@ -28,7 +28,7 @@ class Italic:
         self.parent = parent
         self.textbox = textbox
         self.italic_but = Button(parent, text='Italic')
-        self.italic_but.grid(column=2, row=1, sticky=E)
+        self.italic_but.grid(column=4, row=1, sticky=EW)
         self.italic_but.bind("<Button-1>", self.transformer)
         root.bind("<Control-KeyPress-n>", self.transformer)
 
@@ -49,7 +49,7 @@ class Regular:
         self.parent = parent
         self.textbox = textbox
         self.regular_but = Button(parent, text='Regular')
-        self.regular_but.grid(column=3, row=1, sticky=W)
+        self.regular_but.grid(column=5, row=1, sticky=E, padx=2)
         self.regular_but.bind("<Button-1>", self.transformer)
         root.bind("<Control-KeyPress-r>", self.transformer)
 

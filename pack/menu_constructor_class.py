@@ -28,11 +28,11 @@ class MenuConstructor:
         self.filemenu = Menu(self.rootbar, tearoff=0)  # builds "File" menu
         self.parent.config(menu=self.rootbar)
 
-        self.text_box_frame = Frame(parent, bg='black')
-        self.formatting = Frame(parent, bd=3, takefocus=1)
+        self.text_box_frame = Frame(parent, bd=10)
+        self.formatting = Frame(parent, bd=3)
 
         self.text_box_frame.grid(column=1, row=2, columnspan=2, rowspan=2)
-        self.formatting.grid(column=1, row=1, sticky=NW)
+        self.formatting.grid(column=1, row=1, sticky=NW, columnspan=4)
         self.text = TextBox(self.text_box_frame)
 
         Bold(self.formatting, TextBox.selected_text, parent)

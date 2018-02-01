@@ -19,7 +19,6 @@ class Publisher:
         self.path = path        
         self.temppath = None
         self.fontfolder = None
-        self.l = None
         self.rbvar = IntVar()
         self.rbvar.set(1)
         self.radiobut_plus = Radiobutton(parent, text="PLUS", variable=self.rbvar, value=1)
@@ -65,16 +64,20 @@ class Publisher:
         
     def get_template(self):
         """Gets a path to the template folder"""
-        self.temppath = os.path.normpath(str(askopenfilename(filetype=[('Template file', '*.yml')])))
+        self.temppath = os.path.normpath(askopenfilename(filetype=[('Template file', '*.yml')]))
+
         if self.temppath in '.':
-            return            
+            return
+
         self.fontfolder = os.path.join(os.path.dirname(self.temppath), "sptt_fonts")
+
         if os.path.exists(self.fontfolder):
             pass
         else:            
             messagebox.showwarning("No fonts", "No fonts found. Place the 'sptt_fonts' folder with fonts to the template folder. \nDefault template will be used.")
             self.temppath, self.fontfolder = '', ''
-            return        
+            return
+
         field_check(self.temppath, self.entry2)        
         config_writer('publisher', 'tempfile', self.temppath)
                        
@@ -103,12 +106,9 @@ class Publisher:
         self.fonts = None        
         if self.temppath not in "":
             self.template = " -a pdf-style=" + "\"" + self.temppath + "\"" + " "
-        else:
-            self.template = ""        
-        if self.fontfolder not in "":
             self.fonts = " -a pdf-fontsdir=" + "\"" + self.fontfolder + "\"" + " "
         else:
-            self.fonts = ""
+            self.template, self.fonts = "", ""
 
         self.projectplace = " \"" + self.path + "\""
         self.outputplace = "-D " + "\"" + os.path.normpath(self.outfolder) + "\""
