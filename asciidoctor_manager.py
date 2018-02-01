@@ -19,4 +19,5 @@ if __name__ == "__main__":
     root.geometry('665x700')
     #root.resizable(width=False, height=False)
     #root.attributes("-topmost", 0)
+    root.configure(background='#5fb3e1')
     root.mainloop()

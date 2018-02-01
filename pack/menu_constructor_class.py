@@ -30,6 +30,8 @@ class MenuConstructor:
 
         self.text_box_frame = Frame(self.parent, bd=7)
         self.formatting = Frame(self.parent, bd=3)
+        self.text_box_frame.configure(background='#5fb3e1')
+        self.formatting.configure(background='#5fb3e1')
 
         self.text_box_frame.place(y=30, relwidth=1, relheight=0.95)
         self.formatting.grid(column=1, row=1, sticky=NW)
