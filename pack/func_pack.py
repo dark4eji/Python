@@ -1,5 +1,6 @@
+import os
 from tkinter import messagebox
-from tkinter.filedialog import *
+from tkinter import END
 from configparser import ConfigParser
 
 
@@ -49,5 +50,3 @@ def config_retriever(section, key):
         if "[" + section + "]\n" not in f:
             return ''
     return config.get(section, key)
-
-

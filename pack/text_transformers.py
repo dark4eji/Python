@@ -1,14 +1,16 @@
-from tkinter import Button, W, E, SEL_FIRST, SEL_LAST, _tkinter, EW
+from tkinter import Button, W, E, SEL_FIRST, SEL_LAST, _tkinter, EW, font
 
 
 class Bold:
     def __init__(self, parent, textbox, root):
         self.parent = parent
         self.textbox = textbox
-        self.bold_but = Button(parent, text='Bold')
+        self.segoe_bold = font.Font(family='Verdana', size=8, weight='bold')
+        self.bold_but = Button(parent, text='B',width=2, font=self.segoe_bold)
         self.bold_but.grid(column=3, row=1, sticky=W, padx=2)
         self.bold_but.bind("<Button-1>", self.transformer)
         root.bind("<Control-KeyPress-b>", self.transformer)
+
 
     def transformer(self, event):
         try:
@@ -22,15 +24,16 @@ class Bold:
         self.textbox.insert(self.ind1, self.selected_text_bold)
 
 
-
 class Italic:
     def __init__(self, parent, textbox, root):
         self.parent = parent
         self.textbox = textbox
-        self.italic_but = Button(parent, text='Italic')
+        self.segoe_italic = font.Font(family='Verdana', size=8, weight='bold', slant='italic')
+        self.italic_but = Button(parent, text='I', width=2, font=self.segoe_italic)
         self.italic_but.grid(column=4, row=1, sticky=EW)
         self.italic_but.bind("<Button-1>", self.transformer)
         root.bind("<Control-KeyPress-n>", self.transformer)
+
 
     def transformer(self, event):
         try:
@@ -48,7 +51,8 @@ class Regular:
     def __init__(self, parent, textbox, root):
         self.parent = parent
         self.textbox = textbox
-        self.regular_but = Button(parent, text='Regular')
+        self.segoe_regular = font.Font(family='Verdana', size=8)
+        self.regular_but = Button(parent, text='R', width=2, font=self.segoe_regular)
         self.regular_but.grid(column=5, row=1, sticky=E, padx=2)
         self.regular_but.bind("<Button-1>", self.transformer)
         root.bind("<Control-KeyPress-r>", self.transformer)
