@@ -1,1 +1,1 @@
-__all__ = ['menu_bar_class']
+__all__ = ['toolbar_class.py']

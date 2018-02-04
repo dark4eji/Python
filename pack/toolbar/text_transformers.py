@@ -1,4 +1,5 @@
-from tkinter import Button, W, E, SEL_FIRST, SEL_LAST, _tkinter, EW, font
+from tkinter import Button, W, E, SEL_FIRST, SEL_LAST,\
+    _tkinter, EW, font, INSERT
 
 
 class Bold:
@@ -11,17 +12,17 @@ class Bold:
         self.bold_but.bind("<Button-1>", self.transformer)
         root.bind("<Control-KeyPress-b>", self.transformer)
 
-
     def transformer(self, event):
         try:
             self.selected_text = self.textbox.get(SEL_FIRST, SEL_LAST)
+            self.ind1, self.ind2 = self.textbox.index(SEL_FIRST), self.textbox.index(SEL_LAST)
+            self.selected_text_bold = self.selected_text.replace("*", "").replace("_", "")
+            self.selected_text_bold = "*" + self.selected_text_bold + "*"
+            self.textbox.delete(self.ind1, self.ind2)
+            self.textbox.insert(self.ind1, self.selected_text_bold)
         except(TypeError, _tkinter.TclError):
-            return
-        self.ind1, self.ind2 = self.textbox.index(SEL_FIRST), self.textbox.index(SEL_LAST)
-        self.selected_text_bold = self.selected_text.replace("*", "").replace("_", "")
-        self.selected_text_bold = "*" + self.selected_text_bold + "*"
-        self.textbox.delete(self.ind1, self.ind2)
-        self.textbox.insert(self.ind1, self.selected_text_bold)
+            self.cursor = self.textbox.index(INSERT)
+            self.textbox.insert(self.cursor, "**")
 
 
 class Italic:
@@ -34,17 +35,17 @@ class Italic:
         self.italic_but.bind("<Button-1>", self.transformer)
         root.bind("<Control-KeyPress-n>", self.transformer)
 
-
     def transformer(self, event):
         try:
             self.selected_text = self.textbox.get(SEL_FIRST, SEL_LAST)
+            self.ind1, self.ind2 = self.textbox.index(SEL_FIRST), self.textbox.index(SEL_LAST)
+            self.selected_text_italic = self.selected_text.replace("_", "").replace("*", "")
+            self.selected_text_italic = "_" + self.selected_text_italic + "_"
+            self.textbox.delete(self.ind1, self.ind2)
+            self.textbox.insert(self.ind1, self.selected_text_italic)
         except(TypeError, _tkinter.TclError):
-            return
-        self.ind1, self.ind2 = self.textbox.index(SEL_FIRST), self.textbox.index(SEL_LAST)
-        self.selected_text_italic = self.selected_text.replace("_", "").replace("*", "")
-        self.selected_text_italic = "_" + self.selected_text_italic + "_"
-        self.textbox.delete(self.ind1, self.ind2)
-        self.textbox.insert(self.ind1, self.selected_text_italic)
+            self.cursor = self.textbox.index(INSERT)
+            self.textbox.insert(self.cursor, "__")
 
 
 class Regular:

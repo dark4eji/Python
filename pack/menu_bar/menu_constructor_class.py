@@ -5,14 +5,9 @@ is used for constructing the whole menu bar of the root window.
 For additional information see class and methods docstrings.
 """
 import os
-from tkinter import Menu, Frame, E, NW
-from pack.operations_menu_class import OperationsMenu
-from pack.open_project_class import OpenProject
-from pack.publisher_class import Publisher
-from pack.renamer_class import Renamer
-from pack.creator_class import Creator
-from pack.open_file_class import OpenFile
-from pack.save_as_class import SaveAs
+from tkinter import Menu, Frame
+from pack.menu_bar.menu_classes import OperationsMenu, OpenProject,\
+    Publisher, Renamer, Creator, OpenFile, SaveAs
 from pack.func_pack import config_retriever
 
 
@@ -52,9 +47,9 @@ class MenuConstructor:
         self.open_file = OpenFile
         self.save_as_file = SaveAs
 
-        self.build_pub(self.actionmenu, Publisher, "Publish")
-        self.build_cr(self.actionmenu, Creator, "Create Topic")
-        self.build_ren(self.actionmenu, Renamer, "Rename Topics")
+        self.build_pub(self.actionmenu, Publisher, self.open_project, "Publish")
+        self.build_cr(self.actionmenu, Creator, self.open_project, "Create Topic")
+        self.build_ren(self.actionmenu, Renamer, self.open_project, "Rename Topics")
 
         OpenProject(self.filemenu, self.parent, "Open Project")
         OpenFile(self.filemenu, self.text, "Open Topic File")

@@ -1,18 +1,17 @@
 import os
-from tkinter.filedialog import askopenfilename, asksaveasfilename
-from pack.func_pack import config_writer
-from tkinter import Toplevel
-from pack import open_project_class
-
-
-"""
-The module build the 'Open File' menu, allowing import file contents to
-the Text Box
-"""
+import traceback
+import logging
+import subprocess
+import fileinput
+from tkinter.filedialog import askopenfilename, asksaveasfilename, askdirectory
+from pack.func_pack import no_project_notifier, field_check, config_writer, config_retriever
+from tkinter import Toplevel, messagebox, IntVar, StringVar, Radiobutton,\
+    BooleanVar, Checkbutton, Button, Entry, Label, END, E, W, EW, NW, OptionMenu
 
 
 class OpenFile:
-    """Class is used for getting contents of the file"""
+    """Class builds the 'Open File' menu, allowing import file contents to
+the Text Box"""
     def __init__(self, parent, text, name):
         self.text = text
         self.parent = parent
@@ -26,15 +25,10 @@ class OpenFile:
         self.text.insert_text(self.filepath)
 
 
-"""
-The class represents an Open Project menu that
+class OpenProject:
+    """The class represents an Open Project menu that
 determines what 'project file' should be published
 """
-
-
-class OpenProject:
-    """The open project class is used for building a general path
-    to the project file"""
     project_path = None
     secured_project_path = None
 
@@ -65,15 +59,11 @@ class OpenProject:
         self.root.title('Asciidoctor Manager' + " [" + path + "]")
 
 
-"""
-Module builds menus in 'Operations' cascade
-"""
-
-
 class OperationsMenu:
     """Generates Actions menu with cascades"""
-    def __init__(self, parent, class_, name):
+    def __init__(self, parent, class_, subclass_,  name):
         self.class_ = class_
+        self.subclass_ = subclass_
         self.name = name
         self.parent = parent
         self.filewin = None
@@ -86,29 +76,16 @@ class OperationsMenu:
         self.filewin.grab_set()
         self.filewin.title(name)
         self.filewin.resizable(width=False, height=False)
-        self.class_(self.filewin, open_project_class.OpenProject.secured_project_path)
+        self.class_(self.filewin, self.subclass_.secured_project_path)
 
     def invoking_pub(self):
         """Translates class to the top-level window"""
         self.creating_toplevel(self.parent, self.name)
 
 
-"""
-The module contains logic of project publishing, file opening,
-and logging
-"""
-
-import traceback
-import logging
-import os
-import subprocess
-from tkinter import messagebox, IntVar, Radiobutton, BooleanVar, Checkbutton, Button, Entry, \
-    Label, END, E, W, EW
-from tkinter.filedialog import askdirectory, askopenfilename
-from pack.func_pack import no_project_notifier, field_check, config_writer, config_retriever
-
-
 class Publisher:
+    """The module contains logic of project publishing, file opening,
+and logging"""
     def __init__(self, parent, path):
         self.pub_conf = os.path.join('C:\\', 'ProgramData', 'AMConf', 'data')
         self.path = path        
@@ -185,7 +162,7 @@ class Publisher:
             subprocess.call(self.outtext, shell=True)
         except Exception as e:
             logging.error(traceback.format_exc())
-            messagebox.showerror("Error", "Error occured")
+            messagebox.showerror("Error", "Error occurred")
         self.openpdf()
         self.postpub()
 
@@ -199,7 +176,7 @@ class Publisher:
         self.projectplace = None
         self.template = None
         self.fonts = None        
-        if self.temppath not in "":
+        if self.temppath not in ".":
             self.template = " -a pdf-style=" + "\"" + self.temppath + "\"" + " "
             self.fonts = " -a pdf-fontsdir=" + "\"" + self.fontfolder + "\"" + " "
         else:
@@ -270,12 +247,6 @@ class Publisher:
 
         self.label2.grid(column=1, row=4, pady=5, padx=10, sticky=W)
         self.label4.grid(column=1, row=2, pady=5, padx=10, sticky=W)
-
-
-from tkinter import messagebox
-from tkinter.filedialog import *
-import fileinput
-from pack.func_pack import no_project_notifier
 
 
 class Renamer:
@@ -397,6 +368,99 @@ class SaveAs:
         """Adds menu with the given name"""
         self.parent.add_command(label=self.name, command=self.save_as)
 
+"""
+The class is used for creating new topics in the topics folder, head in the new file
+itself, and entry in the project file
+"""
+
+
+class Creator:
+    """Class contains variables and methods for creating the desired
+    topics"""
+    def __init__(self, parent, path):
+        self.path = path
+        self.name_of_the_topic_label = Label(parent, text="Name of the topic:")
+        self.leveloffset_label = Label(parent, text="Leveloffset:")
+        self.prefix_label = Label(parent, text="Prefix:")
+
+        self.entry2 = Entry(parent, width=45, bd=3)
+        self.entry3 = Entry(parent, width=17, bd=3)
+
+        self.create_button = Button(parent, text="Create", width=5, height=1, command=self.creator)
+
+        self.leveloffsetvar = StringVar()
+        self.leveloffsetvar.set("No leveloffset")
+        self.leveloffsetlistval = ["No leveloffset",
+                                   "+1", "+2", "+3", "-1", "-2", "-3", "0", "1", "2", "3", "4", "5"]
+        self.leveloffsetlist = OptionMenu(parent, self.leveloffsetvar, *self.leveloffsetlistval)
+        self.elements_placing()
+        no_project_notifier(self.path, parent)
+
+    def leveloffset(self):
+        """Used to construct a text construction to write in a project file"""
+        if self.leveloffsetvar.get() in "No leveloffset":
+            self.path_to_topic_file = "\n//" + self.entry2.get().replace("_", " ") +\
+                                      "\ninclude::" + "topics\\" + self.entry3.get() + \
+                                      self.topic_name + "[]"
+            print(self.path_to_topic_file)
+        else:
+            self.path_to_topic_file = "\n//" + self.entry2.get() +\
+                                      "\n:leveloffset: " + self.leveloffsetvar.get() + \
+                                      "\ninclude::" + "topics\\" + self.entry3.get() + \
+                                      self.topic_name + "[]"
+            print(self.path_to_topic_file)
+
+    #  Creator functional parts begin
+
+    def creator(self):
+        """Used for creating topics in topics folder, adding path with leveloffset \
+         to the project file and a title to the topic file"""
+        self.topic_name = self.entry2.get().replace(" ", "").lower() + ".adoc"
+
+        if self.path is None:  # Checks if both entries are empty
+            if self.entry2.get() in "":
+                messagebox.showwarning("No Project File", "Specify path to the project "
+                                                          "file in the File → Open Project menu")
+                return
+
+        if self.entry2.get() in "":  # Checks if proj entry is not empty but topic name is.
+            if self.path is not None:
+                messagebox.showwarning("No Topic Name", "Enter the topic name")
+                return
+
+        if self.topic_name in str(os.listdir(os.path.join(os.path.dirname(self.path), "topics"))):
+            # Checks if topic already exists
+            messagebox.showwarning("Creating Topic", "Topic already exists!")
+            return
+
+        self.leveloffset()
+
+        self.new_topic_parth = os.path.join(os.path.join(os.path.dirname(self.path), "topics"),
+                                            (self.entry3.get() + self.topic_name))
+
+        with open(self.new_topic_parth, 'a') as self.new_file:
+            self.new_file.write("== " + self.entry2.get())
+
+        with open(self.path, 'a') as self.project_file:
+            self.project_file.write(self.path_to_topic_file)
+
+        if self.entry3.get() + self.topic_name in \
+                os.listdir(os.path.join(os.path.dirname(self.path), "topics")):
+            messagebox.showinfo("Creating Topic", "Topic created successfully!")
+            return
+
+        messagebox.showerror("Error", "Creating is unsuccessful")
+        return
+
+    def elements_placing(self):
+        """Places elements on the widget"""
+        self.entry2.grid(column=2, row=3, pady=10, sticky=W)
+        self.entry3.place(x=346, y=10)
+        self.create_button.grid(column=3, row=3, pady=10, padx=10, sticky=W)
+        self.name_of_the_topic_label.grid(column=1, row=3, pady=20, padx=10, sticky=NW)
+        self.leveloffset_label.grid(column=1, row=1, pady=10, padx=10, sticky=W)
+        self.prefix_label.place(x=300, y=10)
+        self.leveloffsetlist.place(x=86, y=5)
 
 
 

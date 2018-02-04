@@ -1,8 +1,8 @@
 import os
 from tkinter import Tk, Frame
-from pack.menu_constructor_class import MenuConstructor as Mc
+from pack.menu_bar.menu_constructor_class import MenuConstructor as Mc
 from pack.full_screen_class import FullScreenApp as FSA
-from pack.menu_bar.menu_bar_class import MenuBar
+from pack.toolbar.toolbar_class import Toolbar
 from pack.text_box_class import TextBox
 
 
@@ -10,7 +10,7 @@ class AM:
     def __init__(self, parent):
         self.parent = parent
         Mc(parent, TextBox)
-        MenuBar(parent, TextBox.selected_text)
+        Toolbar(parent, TextBox.selected_text)
 
 if __name__ == "__main__":
     root = Tk()
