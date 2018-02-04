@@ -12,16 +12,13 @@ from pack.publisher_class import Publisher
 from pack.renamer_class import Renamer
 from pack.creator_class import Creator
 from pack.open_file_class import OpenFile
-from pack.text_box_class import TextBox
 from pack.save_as_class import SaveAs
 from pack.func_pack import config_retriever
-from pack.text_transformers import Bold, Italic, Regular
 
 
 class MenuConstructor:
-    #textbox_window = TextBox
     """Class that constructs menu bar"""
-    def __init__(self, parent):
+    def __init__(self, parent, textbox):
         self.parent = parent
         self.rootbar = Menu(parent, tearoff=0)  # builds the whole menu bar
         self.actionmenu = Menu(self.rootbar, tearoff=0)  # builds "Operations" menu
@@ -29,18 +26,10 @@ class MenuConstructor:
         self.parent.config(menu=self.rootbar)
 
         self.text_box_frame = Frame(self.parent, bd=7)
-        self.formatting = Frame(self.parent, bd=3)
-        self.text_box_frame.configure(background='#5fb3e1')
-        self.formatting.configure(background='#5fb3e1')
+        self.text_box_frame.configure(background='#5fb3e1')       
 
         self.text_box_frame.place(y=30, relwidth=1, relheight=0.95)
-        self.formatting.grid(column=1, row=1, sticky=NW)
-
-        self.text = TextBox(self.text_box_frame)
-
-        Bold(self.formatting, TextBox.selected_text, parent)
-        Italic(self.formatting, TextBox.selected_text, parent)
-        Regular(self.formatting, TextBox.selected_text, parent)
+        self.text = textbox(self.text_box_frame)
 
         self.cascade_adding()
         self.constructor()

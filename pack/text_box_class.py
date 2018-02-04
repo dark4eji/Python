@@ -4,7 +4,7 @@ The module is used for building text box in the root window
 from tkinter import Scrollbar, Text, RIGHT, Y, LEFT, BOTH, END, font, WORD
 
 class TextBox:
-    selected_text = None
+    selected_text = str(None)
     """The class build the text box"""
     def __init__(self, parent):
         self.Font = font.Font(family='Segoe UI', size=12)
