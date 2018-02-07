@@ -1,7 +1,8 @@
 """
 The module is used for building text box in the root window
 """
-from tkinter import Scrollbar, Text, RIGHT, Y, LEFT, BOTH, END, font, WORD
+from tkinter import Scrollbar, Text, RIGHT, Y, LEFT, BOTH, END, font, WORD, Frame
+
 
 class TextBox:
     selected_text = str(None)

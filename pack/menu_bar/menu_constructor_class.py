@@ -11,21 +11,17 @@ from pack.menu_bar.menu_classes import OperationsMenu, OpenProject,\
 from pack.func_pack import config_retriever
 
 
+
 class MenuConstructor:
     """Class that constructs menu bar"""
-    def __init__(self, parent, textbox):
+    def __init__(self, parent, textbox, notebook):
         self.parent = parent
+        self.textbox = textbox
+        self.notebook = notebook
         self.rootbar = Menu(parent, tearoff=0)  # builds the whole menu bar
         self.actionmenu = Menu(self.rootbar, tearoff=0)  # builds "Operations" menu
         self.filemenu = Menu(self.rootbar, tearoff=0)  # builds "File" menu
         self.parent.config(menu=self.rootbar)
-
-        self.text_box_frame = Frame(self.parent, bd=7)
-        self.text_box_frame.configure(background='#5fb3e1')       
-
-        self.text_box_frame.place(y=30, relwidth=1, relheight=0.95)
-        self.text = textbox(self.text_box_frame)
-
         self.cascade_adding()
         self.constructor()
         if os.path.exists(os.path.join('C:', 'ProgramData', 'config.ini')):
@@ -47,10 +43,10 @@ class MenuConstructor:
         self.open_file = OpenFile
         self.save_as_file = SaveAs
 
-        self.build_pub(self.actionmenu, Publisher, self.open_project, "Publish")
-        self.build_cr(self.actionmenu, Creator, self.open_project, "Create Topic")
-        self.build_ren(self.actionmenu, Renamer, self.open_project, "Rename Topics")
+        self.build_pub(self.actionmenu, Publisher, self.open_project, "Publish", self.notebook)
+        self.build_cr(self.actionmenu, Creator, self.open_project, "Create Topic", self.notebook)
+        self.build_ren(self.actionmenu, Renamer, self.open_project, "Rename Topics", self.notebook)
 
         OpenProject(self.filemenu, self.parent, "Open Project")
-        OpenFile(self.filemenu, self.text, "Open Topic File")
-        SaveAs(self.filemenu, self.text, "Save As")
+        OpenFile(self.filemenu, self.textbox, "Open Topic File")
+        SaveAs(self.filemenu, self.textbox, "Save As")

@@ -5,7 +5,7 @@ import subprocess
 import fileinput
 from tkinter.filedialog import askopenfilename, asksaveasfilename, askdirectory
 from pack.func_pack import no_project_notifier, field_check, config_writer, config_retriever
-from tkinter import Toplevel, messagebox, IntVar, StringVar, Radiobutton,\
+from tkinter import Frame, messagebox, IntVar, StringVar, Radiobutton,\
     BooleanVar, Checkbutton, Button, Entry, Label, END, E, W, EW, NW, OptionMenu
 
 
@@ -61,26 +61,29 @@ determines what 'project file' should be published
 
 class OperationsMenu:
     """Generates Actions menu with cascades"""
-    def __init__(self, parent, class_, subclass_,  name):
+    def __init__(self, parent, class_, subclass_,  name, notebook):
+        self.notebook = notebook
         self.class_ = class_
         self.subclass_ = subclass_
         self.name = name
         self.parent = parent
-        self.filewin = None
         self.parent.add_command(label=self.name, command=self.invoking_pub)
+
+
+    def closer(self, event):
+        self.fram.destroy()
 
     def creating_toplevel(self, menu, name):
         """Generates top-level windows"""
-        self.filewin = Toplevel(menu)
-        self.filewin.focus_force()
-        self.filewin.grab_set()
-        self.filewin.title(name)
-        self.filewin.resizable(width=False, height=False)
-        self.class_(self.filewin, self.subclass_.secured_project_path)
+        self.fram = Frame(menu)
+        self.fram.place(y=30, relwidth=1, relheight=0.95)
+        self.class_(self.fram, self.subclass_.secured_project_path)
+        self.notebook.add(self.fram, text=self.name)
+        self.notebook.bind("<Button-3>", self.closer)
 
     def invoking_pub(self):
         """Translates class to the top-level window"""
-        self.creating_toplevel(self.parent, self.name)
+        self.creating_toplevel(self.notebook, self.name)
 
 
 class Publisher:
@@ -116,12 +119,12 @@ and logging"""
         no_project_notifier(self.path, parent)
 
         if os.path.exists(os.path.join('C:', 'ProgramData', 'config.ini')):
-            
+
             self.outfolder = config_retriever('publisher', 'output')
             self.temppath = config_retriever('publisher', 'tempfile')
             self.fontfolder = os.path.join(os.path.dirname(self.temppath), "sptt_fonts")
-                        
-            self.entry4.insert(END, str(self.outfolder))        
+
+            self.entry4.insert(END, str(self.outfolder))
             self.entry2.insert(END, str(self.temppath))
 
     def get_outfolder(self):
