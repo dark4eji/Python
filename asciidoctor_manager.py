@@ -5,7 +5,7 @@ from pack.full_screen_class import FullScreenApp as FSA
 from pack.toolbar.toolbar_class import Toolbar
 from pack.text_box_class import TextBox
 from tkinter.ttk import Notebook
-
+#new random comment
 class AM:
     def __init__(self, parent):
         self.parent = parent
