@@ -1,0 +1,630 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="3803dbbe-a93c-482a-9cf7-178300bd9887" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/asciidoctor_manager.py" afterPath="$PROJECT_DIR$/asciidoctor_manager.py" />
+      <change beforePath="$PROJECT_DIR$/pack/menu_bar/menu_classes.py" afterPath="$PROJECT_DIR$/pack/menu_bar/menu_classes.py" />
+      <change beforePath="$PROJECT_DIR$/pack/menu_bar/menu_constructor_class.py" afterPath="$PROJECT_DIR$/pack/menu_bar/menu_constructor_class.py" />
+      <change beforePath="$PROJECT_DIR$/pack/text_box_class.py" afterPath="$PROJECT_DIR$/pack/text_box_class.py" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileEditorManager">
+    <splitter split-orientation="horizontal" split-proportion="0.5">
+      <split-first>
+        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+          <file leaf-file-name="asciidoctor_manager.py" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/asciidoctor_manager.py">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="323">
+                  <caret line="19" column="0" lean-forward="false" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
+                  <folding>
+                    <element signature="e#0#9#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="menu_constructor_class.py" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/pack/menu_bar/menu_constructor_class.py">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="777">
+                  <caret line="52" column="0" lean-forward="true" selection-start-line="52" selection-start-column="0" selection-end-line="52" selection-end-column="0" />
+                  <folding>
+                    <element signature="e#191#200#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="text_box_class.py" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/pack/text_box_class.py">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="408">
+                  <caret line="24" column="42" lean-forward="true" selection-start-line="24" selection-start-column="42" selection-end-line="24" selection-end-column="42" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="toolbar_class.py" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/pack/toolbar/toolbar_class.py">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="408">
+                  <caret line="24" column="0" lean-forward="false" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
+                  <folding>
+                    <element signature="e#0#29#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+        </leaf>
+      </split-first>
+      <split-second>
+        <leaf>
+          <file leaf-file-name="menu_classes.py" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/pack/menu_bar/menu_classes.py">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="629">
+                  <caret line="75" column="44" lean-forward="true" selection-start-line="75" selection-start-column="44" selection-end-line="75" selection-end-column="44" />
+                  <folding>
+                    <element signature="e#0#9#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="func_pack.py" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/pack/func_pack.py">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="204">
+                  <caret line="14" column="0" lean-forward="true" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="text_transformers.py" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/pack/toolbar/text_transformers.py">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="641">
+                  <caret line="50" column="14" lean-forward="false" selection-start-line="50" selection-start-column="14" selection-end-line="50" selection-end-column="14" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+        </leaf>
+      </split-second>
+    </splitter>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>root</find>
+      <find>pref</find>
+      <find>delimiter</find>
+      <find>project</find>
+      <find>print</find>
+      <find>exit_btn</find>
+      <find>exit</find>
+      <find>chbtn</find>
+      <find>filemenu</find>
+      <find>Menu(root)</find>
+      <find>Menu</find>
+      <find>child</find>
+      <find>entry1</find>
+      <find>self.projpath</find>
+      <find>add</find>
+      <find>noproj_notifier</find>
+      <find>Filem</find>
+      <find>Output folder should not be a root</find>
+      <find>dir</find>
+      <find>list</find>
+      <find>self.temppath</find>
+      <find>config</find>
+      <find>in</find>
+      <find>focus</find>
+      <find>Creator</find>
+      <find>rele</find>
+    </findStrings>
+    <replaceStrings>
+      <replace>tk.Label</replace>
+      <replace>main</replace>
+      <replace>self.frame1</replace>
+      <replace>self.frame2</replace>
+      <replace>opmenu</replace>
+      <replace>self.path</replace>
+      <replace>no_project_notifier</replace>
+      <replace>parent</replace>
+      <replace>self.temppath_red</replace>
+      <replace>textbox</replace>
+    </replaceStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/pack/radbutton.py" />
+        <option value="$PROJECT_DIR$/pack/label.py" />
+        <option value="$PROJECT_DIR$/pack/panedwindow.py" />
+        <option value="$PROJECT_DIR$/pack/pdf_logic.py" />
+        <option value="$PROJECT_DIR$/Editor.py" />
+        <option value="$PROJECT_DIR$/pack/filemenu.py" />
+        <option value="$PROJECT_DIR$/creator.py" />
+        <option value="$PROJECT_DIR$/pack/opermenu.py" />
+        <option value="$PROJECT_DIR$/pack/barmenus.py" />
+        <option value="$PROJECT_DIR$/pack/actions.py" />
+        <option value="$PROJECT_DIR$/pack/optionlist.py" />
+        <option value="$PROJECT_DIR$/pack/actions_menu.py" />
+        <option value="$PROJECT_DIR$/pack/project_menu.py" />
+        <option value="$PROJECT_DIR$/open_project.py" />
+        <option value="$PROJECT_DIR$/pack/open_project.py" />
+        <option value="$PROJECT_DIR$/pack/menu_builder.py" />
+        <option value="$PROJECT_DIR$/pack/creator.py" />
+        <option value="$PROJECT_DIR$/pack/renamer.py" />
+        <option value="$PROJECT_DIR$/pack/publisher.py" />
+        <option value="$PROJECT_DIR$/pack/editor.py" />
+        <option value="$PROJECT_DIR$/pack/save_as.py" />
+        <option value="$PROJECT_DIR$/asciidoctor_manager.pyw" />
+        <option value="$PROJECT_DIR$/README.md" />
+        <option value="$PROJECT_DIR$/pack/file_menu.py" />
+        <option value="$PROJECT_DIR$/pack/menu_constructor.py" />
+        <option value="$PROJECT_DIR$/pack/noproj_notifier.py" />
+        <option value="$PROJECT_DIR$/pack/MenuConstructor.py" />
+        <option value="$PROJECT_DIR$/pack/op_menu_class.py" />
+        <option value="$PROJECT_DIR$/pack/no_project_notifier.py" />
+        <option value="$PROJECT_DIR$/pack/renamer_class.py" />
+        <option value="$PROJECT_DIR$/pack/full_screen_class.py" />
+        <option value="$PROJECT_DIR$/pack/save_file_class.py" />
+        <option value="$PROJECT_DIR$/pack/__init__.py" />
+        <option value="$PROJECT_DIR$/pack/open_project_class.py" />
+        <option value="$PROJECT_DIR$/pack/creator_class.py" />
+        <option value="$PROJECT_DIR$/pack/open_file_class.py" />
+        <option value="$PROJECT_DIR$/pack/operations_menu_class.py" />
+        <option value="$PROJECT_DIR$/pack/save_as_class.py" />
+        <option value="$PROJECT_DIR$/pack/bold_class.py" />
+        <option value="$PROJECT_DIR$/pack/italic_class.py" />
+        <option value="$PROJECT_DIR$/pack/publisher_class.py" />
+        <option value="$PROJECT_DIR$/pack/text_transformers.py" />
+        <option value="$PROJECT_DIR$/pack/menu_constructor_class.py" />
+        <option value="$PROJECT_DIR$/pack/toolbar/toolbar_class.py" />
+        <option value="$PROJECT_DIR$/pack/toolbar/text_transformers.py" />
+        <option value="$PROJECT_DIR$/pack/toolbar/image_insert_class.py" />
+        <option value="$PROJECT_DIR$/pack/text_box_class.py" />
+        <option value="$PROJECT_DIR$/pack/menu_bar/menu_constructor_class.py" />
+        <option value="$PROJECT_DIR$/pack/func_pack.py" />
+        <option value="$PROJECT_DIR$/asciidoctor_manager.py" />
+        <option value="$PROJECT_DIR$/pack/menu_bar/menu_classes.py" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="953" />
+    <option name="width" value="966" />
+    <option name="height" value="1047" />
+  </component>
+  <component name="ProjectView">
+    <navigator currentView="ProjectPane" proportions="" version="1">
+      <flattenPackages />
+      <showMembers />
+      <showModules />
+      <showLibraryContents />
+      <hideEmptyPackages />
+      <abbreviatePackageNames />
+      <autoscrollToSource />
+      <autoscrollFromSource />
+      <sortByType />
+      <manualOrder />
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="Scratches" />
+      <pane id="Scope" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="AM" type="b2602c69:ProjectViewProjectNode" />
+              <item name="AM" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="AM" type="b2602c69:ProjectViewProjectNode" />
+              <item name="AM" type="462c0819:PsiDirectoryNode" />
+              <item name="pack" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="AM" type="b2602c69:ProjectViewProjectNode" />
+              <item name="AM" type="462c0819:PsiDirectoryNode" />
+              <item name="pack" type="462c0819:PsiDirectoryNode" />
+              <item name="menu_bar" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="AM" type="b2602c69:ProjectViewProjectNode" />
+              <item name="AM" type="462c0819:PsiDirectoryNode" />
+              <item name="pack" type="462c0819:PsiDirectoryNode" />
+              <item name="toolbar" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/Asciidoctor PDF/pack/main_logic.py" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Workplace\Python\pack" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager" selected="Python.asciidoctor_manager">
+    <configuration name="asciidoctor_manager" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="Asciidoctor Manager" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/asciidoctor_manager.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+    </configuration>
+    <configuration name="asciidoctor_manager.pyw" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="Asciidoctor Manager" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/asciidoctor_manager.pyw" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+    </configuration>
+    <configuration name="menu_builder_class" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/pack" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="Asciidoctor Manager" />
+      <option name="SCRIPT_NAME" value="D:\Workplace\Python\pack\operations_menu_class.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+    </configuration>
+    <configuration name="open_project_class" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/pack" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="Asciidoctor Manager" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/pack/open_project_class.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+    </configuration>
+    <configuration name="publisher_class" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/pack" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="Asciidoctor Manager" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/pack/publisher_class.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+    </configuration>
+    <list size="5">
+      <item index="0" class="java.lang.String" itemvalue="Python.asciidoctor_manager.pyw" />
+      <item index="1" class="java.lang.String" itemvalue="Python.publisher_class" />
+      <item index="2" class="java.lang.String" itemvalue="Python.menu_builder_class" />
+      <item index="3" class="java.lang.String" itemvalue="Python.asciidoctor_manager" />
+      <item index="4" class="java.lang.String" itemvalue="Python.open_project_class" />
+    </list>
+    <recent_temporary>
+      <list size="5">
+        <item index="0" class="java.lang.String" itemvalue="Python.asciidoctor_manager" />
+        <item index="1" class="java.lang.String" itemvalue="Python.open_project_class" />
+        <item index="2" class="java.lang.String" itemvalue="Python.publisher_class" />
+        <item index="3" class="java.lang.String" itemvalue="Python.menu_builder_class" />
+        <item index="4" class="java.lang.String" itemvalue="Python.asciidoctor_manager.pyw" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="ShelveChangesManager" show_recycled="false">
+    <option name="remove_strategy" value="false" />
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="3803dbbe-a93c-482a-9cf7-178300bd9887" name="Default" comment="" />
+      <created>1516023950903</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1516023950903</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <editor active="true" />
+    <layout>
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1601686" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32900432" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.21428572" sideWeight="0.33508956" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21428572" sideWeight="0.66491044" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.12908325" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39718616" sideWeight="0.48946258" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32900432" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+    </layout>
+    <layout-to-restore>
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32900432" sideWeight="0.31770286" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32900432" sideWeight="0.68229717" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.11433087" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.12908325" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39718616" sideWeight="0.48946258" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+    </layout-to-restore>
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <default-breakpoints>
+        <breakpoint type="python-exception">
+          <properties notifyOnTerminate="true" exception="BaseException">
+            <option name="notifyOnTerminate" value="true" />
+          </properties>
+        </breakpoint>
+      </default-breakpoints>
+      <option name="time" value="14" />
+    </breakpoint-manager>
+    <watches-manager />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/pack/label.py" />
+    <entry file="file://$PROJECT_DIR$/pack/panedwindow.py" />
+    <entry file="file://$PROJECT_DIR$/pack/optionlist.py" />
+    <entry file="file://$PROJECT_DIR$/asciidoctor_manager.pyw" />
+    <entry file="file://$PROJECT_DIR$/pack/label.py" />
+    <entry file="file://$PROJECT_DIR$/pack/panedwindow.py" />
+    <entry file="file://$PROJECT_DIR$/pack/optionlist.py" />
+    <entry file="file://$PROJECT_DIR$/asciidoctor_manager.pyw" />
+    <entry file="file://$PROJECT_DIR$/pack/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="37" lean-forward="false" selection-start-line="0" selection-start-column="37" selection-end-line="0" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pack/selecting_to_rename.py" />
+    <entry file="file://$PROJECT_DIR$/draft.py" />
+    <entry file="file://$PROJECT_DIR$/../Anaconda/Lib/tkinter/__init__.py" />
+    <entry file="file://$PROJECT_DIR$/ver_0.0.2.md" />
+    <entry file="file://$PROJECT_DIR$/Asciidoctor PDF/pack/main_logic.py" />
+    <entry file="file://$USER_HOME$/.PyCharmCE2017.3/system/python_stubs/-1030699182/nt.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="203">
+          <caret line="546" column="4" lean-forward="false" selection-start-line="546" selection-start-column="4" selection-end-line="546" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/creator.py" />
+    <entry file="file://$PROJECT_DIR$/pack/radbutton.py" />
+    <entry file="file://$PROJECT_DIR$/pack/optionlist.py" />
+    <entry file="file://$PROJECT_DIR$/pack/lblw.py" />
+    <entry file="file://$PROJECT_DIR$/pack/label.py" />
+    <entry file="file://$PROJECT_DIR$/pack/panedwindow.py" />
+    <entry file="file://$PROJECT_DIR$/en_newage" />
+    <entry file="file://$PROJECT_DIR$/../Anaconda/Lib/tkinter/messagebox.py" />
+    <entry file="file://$PROJECT_DIR$/asciidoctor_manager.pyw" />
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="0" lean-forward="false" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pack/editor.py" />
+    <entry file="file://D:/Anaconda/Lib/configparser.py" />
+    <entry file="file://$PROJECT_DIR$/pack/operations_menu_class.py" />
+    <entry file="file://$PROJECT_DIR$/pack/open_project_class.py" />
+    <entry file="file://$PROJECT_DIR$/pack/bold_class.py" />
+    <entry file="file://$PROJECT_DIR$/pack/save_as_class.py" />
+    <entry file="file://$PROJECT_DIR$/pack/save_file_class.py" />
+    <entry file="file://$PROJECT_DIR$/pack/renamer_class.py" />
+    <entry file="file://$PROJECT_DIR$/pack/creator_class.py" />
+    <entry file="file://$PROJECT_DIR$/pack/publisher_class.py" />
+    <entry file="file://$PROJECT_DIR$/pack/open_file_class.py" />
+    <entry file="file://$PROJECT_DIR$/pack/full_screen_class.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="43" lean-forward="true" selection-start-line="10" selection-start-column="43" selection-end-line="10" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pack/text_transformers.py" />
+    <entry file="file://$PROJECT_DIR$/pack/menu_constructor_class.py" />
+    <entry file="file://$PROJECT_DIR$/.gitignore" />
+    <entry file="file://$PROJECT_DIR$/pack/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="30" lean-forward="true" selection-start-line="2" selection-start-column="30" selection-end-line="2" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pack/menu_bar/creator_class.py" />
+    <entry file="file://$PROJECT_DIR$/pack/menu_bar/open_project_class.py" />
+    <entry file="file://$PROJECT_DIR$/pack/toolbar/image_insert_class.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="561">
+          <caret line="33" column="0" lean-forward="true" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#9#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/asciidoctor_manager.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="19" column="0" lean-forward="false" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#9#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pack/menu_bar/menu_constructor_class.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="777">
+          <caret line="52" column="0" lean-forward="true" selection-start-line="52" selection-start-column="0" selection-end-line="52" selection-end-column="0" />
+          <folding>
+            <element signature="e#191#200#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pack/toolbar/toolbar_class.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="24" column="0" lean-forward="false" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#29#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pack/func_pack.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="14" column="0" lean-forward="true" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pack/toolbar/text_transformers.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="641">
+          <caret line="50" column="14" lean-forward="false" selection-start-line="50" selection-start-column="14" selection-end-line="50" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pack/menu_bar/menu_classes.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="629">
+          <caret line="75" column="44" lean-forward="true" selection-start-line="75" selection-start-column="44" selection-end-line="75" selection-end-column="44" />
+          <folding>
+            <element signature="e#0#9#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pack/text_box_class.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="24" column="42" lean-forward="true" selection-start-line="24" selection-start-column="42" selection-end-line="24" selection-end-column="42" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>

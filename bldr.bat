@@ -1,0 +1,1 @@
+pyinstaller --onefile --windowed asciidoctor_manager.py
